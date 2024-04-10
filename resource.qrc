@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resource/Group 1000005021.png</file>
+        <file>resource/Rectangle 34624644.png</file>
+        <file>resource/Group 1000005035.png</file>
+        <file>resource/next.png</file>
+        <file>resource/previous.png</file>
+        <file>resource/shuffle.png</file>
+        <file>resource/volume.png</file>
+        <file>resource/Rectangle 34624646.png</file>
+        <file>resource/Rectangle 34624647.png</file>
+        <file>resource/Rectangle 6152.png</file>
+        <file>resource/Frame 41.png</file>
+        <file>resource/Rectangle 34624663.png</file>
+        <file>resource/music_cover/back to me.png</file>
+        <file>resource/music_cover/Heartless.png</file>
+        <file>resource/music_cover/hotline bling.png</file>
+        <file>resource/music_cover/Mia &amp;Sebastian's Theme.png</file>
+        <file>resource/Group 1000005051.png</file>
+        <file>resource/Subtract.png</file>
+    </qresource>
+</RCC>

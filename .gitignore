@@ -1,0 +1,8 @@
+debug
+release
+shangtang.pro.user
+shangtang.pro.user*
+Makefile
+Makefile.Debug
+Makefile.Release
+main.o
