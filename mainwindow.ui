@@ -21,10 +21,10 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
-      <widget class="QWidget" name="page_2">
-       <layout class="QVBoxLayout" name="verticalLayout_2">
+      <widget class="QWidget" name="page_7">
+       <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
          <widget class="QPushButton" name="video_back">
           <property name="minimumSize">
@@ -65,292 +65,124 @@ background-image: url(:/resource/Frame 41.png);</string>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="root_widget">
-       <layout class="QVBoxLayout" name="verticalLayout_3">
+      <widget class="QWidget" name="root_widget_3">
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QWidget" name="widget_2" native="true">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>96</height>
-           </size>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">
+         <widget class="QWidget" name="widget" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_12">
            <item>
-            <widget class="QPushButton" name="pushButton_back">
-             <property name="minimumSize">
-              <size>
-               <width>96</width>
-               <height>96</height>
-              </size>
-             </property>
+            <widget class="QWidget" name="widget_2" native="true">
              <property name="maximumSize">
               <size>
-               <width>96</width>
+               <width>16777215</width>
                <height>96</height>
               </size>
              </property>
-             <property name="styleSheet">
-              <string notr="true">background:transparent;
-background-image: url(:/resource/Frame 41.png);</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>96</width>
-               <height>96</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_title">
-             <property name="font">
-              <font>
-               <pointsize>24</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color: white；</string>
-             </property>
-             <property name="text">
-              <string>商汤绝影 3D手势功能体验</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
-         <widget class="QWidget" name="widget_3" native="true">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>500</height>
-           </size>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,2">
-           <item>
-            <widget class="QWidget" name="widget_5" native="true">
-             <property name="styleSheet">
-              <string notr="true">background:transparent;
-background-image: url(:/resource/Rectangle 34624647.png);</string>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_4">
+             <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">
               <item>
-               <widget class="QLabel" name="label_music_title">
-                <property name="font">
-                 <font>
-                  <pointsize>16</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: white；</string>
-                </property>
-                <property name="text">
-                 <string>单曲列表</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QListWidget" name="music_list">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background:transparent;
-border: 0px solid transparent;
-</string>
-                </property>
-                <property name="autoScrollMargin">
-                 <number>150</number>
-                </property>
-                <property name="iconSize">
+               <widget class="QPushButton" name="pushButton_back">
+                <property name="minimumSize">
                  <size>
-                  <width>100</width>
-                  <height>100</height>
+                  <width>96</width>
+                  <height>96</height>
                  </size>
                 </property>
-                <property name="batchSize">
-                 <number>10</number>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <widget class="QWidget" name="widget_6" native="true">
-             <property name="styleSheet">
-              <string notr="true">background:transparent;
-background-image: url(:/resource/Rectangle 34624646.png);</string>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_5">
-              <item>
-               <widget class="QLabel" name="label_video_title">
-                <property name="font">
-                 <font>
-                  <pointsize>16</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: white；</string>
-                </property>
-                <property name="text">
-                 <string>商汤绝影功能视频列表</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QListWidget" name="video_list">
-                <property name="font">
-                 <font>
-                  <pointsize>1</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background:transparent;
-border: 0px solid transparent;
-</string>
-                </property>
-                <property name="autoScrollMargin">
-                 <number>150</number>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>480</width>
-                  <height>360</height>
-                 </size>
-                </property>
-                <property name="batchSize">
-                 <number>10</number>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
-         <widget class="QWidget" name="widget_4" native="true">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>208</height>
-           </size>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_6">
-           <property name="spacing">
-            <number>0</number>
-           </property>
-           <property name="leftMargin">
-            <number>0</number>
-           </property>
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <property name="rightMargin">
-            <number>0</number>
-           </property>
-           <property name="bottomMargin">
-            <number>0</number>
-           </property>
-           <item>
-            <widget class="QSlider" name="progressBar">
-             <property name="styleSheet">
-              <string notr="true">background:transparent;
-background-image: url(:/resource/Rectangle 6152.png);</string>
-             </property>
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QWidget" name="audio_control_container" native="true">
-             <property name="styleSheet">
-              <string notr="true">background:transparent;
-background-image: url(:/resource/Rectangle 34624644.png);</string>
-             </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_2">
-              <property name="spacing">
-               <number>0</number>
-              </property>
-              <property name="leftMargin">
-               <number>0</number>
-              </property>
-              <property name="topMargin">
-               <number>0</number>
-              </property>
-              <property name="rightMargin">
-               <number>0</number>
-              </property>
-              <property name="bottomMargin">
-               <number>0</number>
-              </property>
-              <item>
-               <widget class="QLabel" name="label_music_cover">
                 <property name="maximumSize">
                  <size>
-                  <width>120</width>
-                  <height>120</height>
+                  <width>96</width>
+                  <height>96</height>
                  </size>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">background:transparent;
-background-image: url(:/resource/Group 1000005021.png);</string>
+background-image: url(:/resource/Frame 41.png);</string>
                 </property>
                 <property name="text">
                  <string/>
                 </property>
-                <property name="scaledContents">
-                 <bool>true</bool>
+                <property name="iconSize">
+                 <size>
+                  <width>96</width>
+                  <height>96</height>
+                 </size>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QWidget" name="widget_7" native="true">
-                <property name="maximumSize">
-                 <size>
-                  <width>300</width>
-                  <height>16777215</height>
-                 </size>
+               <widget class="QLabel" name="label_title">
+                <property name="font">
+                 <font>
+                  <pointsize>24</pointsize>
+                 </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background:transparent;</string>
+                 <string notr="true">color: white；</string>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_7">
+                <property name="text">
+                 <string>商汤绝影 3D手势功能体验</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_3" native="true">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>500</height>
+              </size>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,2">
+              <item>
+               <widget class="QWidget" name="widget_11" native="true">
+                <property name="styleSheet">
+                 <string notr="true">background:transparent;
+background-image: url(:/resource/Rectangle 34624647.png);</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_5">
                  <item>
-                  <widget class="QLabel" name="label_name">
+                  <widget class="QLabel" name="label_music_title">
                    <property name="font">
                     <font>
                      <pointsize>16</pointsize>
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">color: white;background:transparent;</string>
+                    <string notr="true">color: white；</string>
                    </property>
                    <property name="text">
-                    <string>Mia &amp;Sebastian's Theme</string>
+                    <string>单曲列表</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_author">
-                   <property name="styleSheet">
-                    <string notr="true">color: white;background:transparent;</string>
+                  <widget class="QListWidget" name="music_list">
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
                    </property>
-                   <property name="text">
-                    <string>Justin Hurwitz</string>
+                   <property name="styleSheet">
+                    <string notr="true">background:transparent;
+border: 0px solid transparent;
+</string>
+                   </property>
+                   <property name="autoScrollMargin">
+                    <number>150</number>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>100</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="batchSize">
+                    <number>10</number>
                    </property>
                   </widget>
                  </item>
@@ -358,113 +190,57 @@ background-image: url(:/resource/Group 1000005021.png);</string>
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton_previous">
-                <property name="maximumSize">
-                 <size>
-                  <width>86</width>
-                  <height>86</height>
-                 </size>
-                </property>
+               <widget class="QWidget" name="widget_12" native="true">
                 <property name="styleSheet">
                  <string notr="true">background:transparent;
-background-image: url(:/resource/previous.png);</string>
+background-image: url(:/resource/Rectangle 34624646.png);</string>
                 </property>
-                <property name="text">
-                 <string/>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_play">
-                <property name="maximumSize">
-                 <size>
-                  <width>128</width>
-                  <height>128</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background:transparent;
+                <layout class="QVBoxLayout" name="verticalLayout_13">
+                 <item>
+                  <widget class="QLabel" name="label_video_title">
+                   <property name="font">
+                    <font>
+                     <pointsize>16</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: white；</string>
+                   </property>
+                   <property name="text">
+                    <string>商汤绝影功能视频列表</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QListWidget" name="video_list">
+                   <property name="font">
+                    <font>
+                     <pointsize>1</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background:transparent;
+border: 0px solid transparent;
 </string>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="icon">
-                 <iconset resource="resource.qrc">
-                  <normaloff>:/resource/Group 1000005035.png</normaloff>
-                  <normalon>:/resource/Subtract.png</normalon>:/resource/Group 1000005035.png</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>130</width>
-                  <height>130</height>
-                 </size>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_next">
-                <property name="maximumSize">
-                 <size>
-                  <width>86</width>
-                  <height>86</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background:transparent;
-background-image: url(:/resource/next.png);</string>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_volume">
-                <property name="maximumSize">
-                 <size>
-                  <width>75</width>
-                  <height>75</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background:transparent;
-background-image: url(:/resource/volume.png);</string>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>16</width>
-                  <height>16</height>
-                 </size>
-                </property>
+                   </property>
+                   <property name="autoScrollMargin">
+                    <number>150</number>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>480</width>
+                     <height>360</height>
+                    </size>
+                   </property>
+                   <property name="batchSize">
+                    <number>10</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
-            </widget>
-           </item>
-           <item>
-            <widget class="QSlider" name="volumeBar">
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>5</height>
-              </size>
-             </property>
-             <property name="maximum">
-              <number>100</number>
-             </property>
-             <property name="sliderPosition">
-              <number>50</number>
-             </property>
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
             </widget>
            </item>
           </layout>
@@ -472,6 +248,236 @@ background-image: url(:/resource/volume.png);</string>
         </item>
        </layout>
       </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="widget_6" native="true">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>208</height>
+       </size>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_10">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QSlider" name="progressBar">
+         <property name="styleSheet">
+          <string notr="true">background:transparent;
+background-image: url(:/resource/Rectangle 6152.png);</string>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="audio_control_container" native="true">
+         <property name="styleSheet">
+          <string notr="true">background:transparent;
+background-image: url(:/resource/Rectangle 34624644.png);</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_music_cover">
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+background-image: url(:/resource/Group 1000005021.png);</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_10" native="true">
+            <property name="maximumSize">
+             <size>
+              <width>300</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_11">
+             <item>
+              <widget class="QLabel" name="label_name">
+               <property name="font">
+                <font>
+                 <pointsize>16</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: white;background:transparent;</string>
+               </property>
+               <property name="text">
+                <string>Mia &amp;Sebastian's Theme</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_author">
+               <property name="styleSheet">
+                <string notr="true">color: white;background:transparent;</string>
+               </property>
+               <property name="text">
+                <string>Justin Hurwitz</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_previous">
+            <property name="maximumSize">
+             <size>
+              <width>86</width>
+              <height>86</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+background-image: url(:/resource/previous.png);</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_play">
+            <property name="maximumSize">
+             <size>
+              <width>128</width>
+              <height>128</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resource.qrc">
+              <normaloff>:/resource/Group 1000005035.png</normaloff>
+              <normalon>:/resource/Subtract.png</normalon>:/resource/Group 1000005035.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>130</width>
+              <height>130</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_next">
+            <property name="maximumSize">
+             <size>
+              <width>86</width>
+              <height>86</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+background-image: url(:/resource/next.png);</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_volume">
+            <property name="maximumSize">
+             <size>
+              <width>75</width>
+              <height>75</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+background-image: url(:/resource/volume.png);</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="volumeBar">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>5</height>
+          </size>
+         </property>
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="sliderPosition">
+          <number>50</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>

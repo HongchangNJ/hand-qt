@@ -31,34 +31,36 @@ public:
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QStackedWidget *stackedWidget;
-    QWidget *page_2;
-    QVBoxLayout *verticalLayout_2;
+    QWidget *page_7;
+    QVBoxLayout *verticalLayout_4;
     QPushButton *video_back;
     VideoWidget *video_widget;
-    QWidget *root_widget;
-    QVBoxLayout *verticalLayout_3;
+    QWidget *root_widget_3;
+    QHBoxLayout *horizontalLayout_2;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout_12;
     QWidget *widget_2;
     QHBoxLayout *horizontalLayout;
     QPushButton *pushButton_back;
     QLabel *label_title;
     QWidget *widget_3;
-    QHBoxLayout *horizontalLayout_3;
-    QWidget *widget_5;
-    QVBoxLayout *verticalLayout_4;
+    QHBoxLayout *horizontalLayout_5;
+    QWidget *widget_11;
+    QVBoxLayout *verticalLayout_5;
     QLabel *label_music_title;
     QListWidget *music_list;
-    QWidget *widget_6;
-    QVBoxLayout *verticalLayout_5;
+    QWidget *widget_12;
+    QVBoxLayout *verticalLayout_13;
     QLabel *label_video_title;
     QListWidget *video_list;
-    QWidget *widget_4;
-    QVBoxLayout *verticalLayout_6;
+    QWidget *widget_6;
+    QVBoxLayout *verticalLayout_10;
     QSlider *progressBar;
     QWidget *audio_control_container;
-    QHBoxLayout *horizontalLayout_2;
+    QHBoxLayout *horizontalLayout_4;
     QLabel *label_music_cover;
-    QWidget *widget_7;
-    QVBoxLayout *verticalLayout_7;
+    QWidget *widget_10;
+    QVBoxLayout *verticalLayout_11;
     QLabel *label_name;
     QLabel *label_author;
     QPushButton *pushButton_previous;
@@ -79,11 +81,11 @@ public:
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
-        page_2 = new QWidget();
-        page_2->setObjectName(QString::fromUtf8("page_2"));
-        verticalLayout_2 = new QVBoxLayout(page_2);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        video_back = new QPushButton(page_2);
+        page_7 = new QWidget();
+        page_7->setObjectName(QString::fromUtf8("page_7"));
+        verticalLayout_4 = new QVBoxLayout(page_7);
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        video_back = new QPushButton(page_7);
         video_back->setObjectName(QString::fromUtf8("video_back"));
         video_back->setMinimumSize(QSize(96, 96));
         video_back->setMaximumSize(QSize(96, 96));
@@ -91,22 +93,26 @@ public:
 "background-image: url(:/resource/Frame 41.png);"));
         video_back->setIconSize(QSize(96, 96));
 
-        verticalLayout_2->addWidget(video_back);
+        verticalLayout_4->addWidget(video_back);
 
-        video_widget = new VideoWidget(page_2);
+        video_widget = new VideoWidget(page_7);
         video_widget->setObjectName(QString::fromUtf8("video_widget"));
         QFont font;
         font.setPointSize(16);
         video_widget->setFont(font);
 
-        verticalLayout_2->addWidget(video_widget);
+        verticalLayout_4->addWidget(video_widget);
 
-        stackedWidget->addWidget(page_2);
-        root_widget = new QWidget();
-        root_widget->setObjectName(QString::fromUtf8("root_widget"));
-        verticalLayout_3 = new QVBoxLayout(root_widget);
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        widget_2 = new QWidget(root_widget);
+        stackedWidget->addWidget(page_7);
+        root_widget_3 = new QWidget();
+        root_widget_3->setObjectName(QString::fromUtf8("root_widget_3"));
+        horizontalLayout_2 = new QHBoxLayout(root_widget_3);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        widget = new QWidget(root_widget_3);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        verticalLayout_12 = new QVBoxLayout(widget);
+        verticalLayout_12->setObjectName(QString::fromUtf8("verticalLayout_12"));
+        widget_2 = new QWidget(widget);
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
         widget_2->setMaximumSize(QSize(16777215, 96));
         horizontalLayout = new QHBoxLayout(widget_2);
@@ -133,27 +139,27 @@ public:
 
         horizontalLayout->setStretch(1, 1);
 
-        verticalLayout_3->addWidget(widget_2);
+        verticalLayout_12->addWidget(widget_2);
 
-        widget_3 = new QWidget(root_widget);
+        widget_3 = new QWidget(widget);
         widget_3->setObjectName(QString::fromUtf8("widget_3"));
         widget_3->setMaximumSize(QSize(16777215, 500));
-        horizontalLayout_3 = new QHBoxLayout(widget_3);
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        widget_5 = new QWidget(widget_3);
-        widget_5->setObjectName(QString::fromUtf8("widget_5"));
-        widget_5->setStyleSheet(QString::fromUtf8("background:transparent;\n"
+        horizontalLayout_5 = new QHBoxLayout(widget_3);
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        widget_11 = new QWidget(widget_3);
+        widget_11->setObjectName(QString::fromUtf8("widget_11"));
+        widget_11->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "background-image: url(:/resource/Rectangle 34624647.png);"));
-        verticalLayout_4 = new QVBoxLayout(widget_5);
-        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        label_music_title = new QLabel(widget_5);
+        verticalLayout_5 = new QVBoxLayout(widget_11);
+        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
+        label_music_title = new QLabel(widget_11);
         label_music_title->setObjectName(QString::fromUtf8("label_music_title"));
         label_music_title->setFont(font);
         label_music_title->setStyleSheet(QString::fromUtf8("color: white\357\274\233"));
 
-        verticalLayout_4->addWidget(label_music_title);
+        verticalLayout_5->addWidget(label_music_title);
 
-        music_list = new QListWidget(widget_5);
+        music_list = new QListWidget(widget_11);
         music_list->setObjectName(QString::fromUtf8("music_list"));
         QFont font2;
         font2.setPointSize(12);
@@ -165,25 +171,25 @@ public:
         music_list->setIconSize(QSize(100, 100));
         music_list->setBatchSize(10);
 
-        verticalLayout_4->addWidget(music_list);
+        verticalLayout_5->addWidget(music_list);
 
 
-        horizontalLayout_3->addWidget(widget_5);
+        horizontalLayout_5->addWidget(widget_11);
 
-        widget_6 = new QWidget(widget_3);
-        widget_6->setObjectName(QString::fromUtf8("widget_6"));
-        widget_6->setStyleSheet(QString::fromUtf8("background:transparent;\n"
+        widget_12 = new QWidget(widget_3);
+        widget_12->setObjectName(QString::fromUtf8("widget_12"));
+        widget_12->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "background-image: url(:/resource/Rectangle 34624646.png);"));
-        verticalLayout_5 = new QVBoxLayout(widget_6);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        label_video_title = new QLabel(widget_6);
+        verticalLayout_13 = new QVBoxLayout(widget_12);
+        verticalLayout_13->setObjectName(QString::fromUtf8("verticalLayout_13"));
+        label_video_title = new QLabel(widget_12);
         label_video_title->setObjectName(QString::fromUtf8("label_video_title"));
         label_video_title->setFont(font);
         label_video_title->setStyleSheet(QString::fromUtf8("color: white\357\274\233"));
 
-        verticalLayout_5->addWidget(label_video_title);
+        verticalLayout_13->addWidget(label_video_title);
 
-        video_list = new QListWidget(widget_6);
+        video_list = new QListWidget(widget_12);
         video_list->setObjectName(QString::fromUtf8("video_list"));
         QFont font3;
         font3.setPointSize(1);
@@ -195,39 +201,46 @@ public:
         video_list->setIconSize(QSize(480, 360));
         video_list->setBatchSize(10);
 
-        verticalLayout_5->addWidget(video_list);
+        verticalLayout_13->addWidget(video_list);
 
 
-        horizontalLayout_3->addWidget(widget_6);
+        horizontalLayout_5->addWidget(widget_12);
 
-        horizontalLayout_3->setStretch(0, 1);
-        horizontalLayout_3->setStretch(1, 2);
+        horizontalLayout_5->setStretch(0, 1);
+        horizontalLayout_5->setStretch(1, 2);
 
-        verticalLayout_3->addWidget(widget_3);
+        verticalLayout_12->addWidget(widget_3);
 
-        widget_4 = new QWidget(root_widget);
-        widget_4->setObjectName(QString::fromUtf8("widget_4"));
-        widget_4->setMaximumSize(QSize(16777215, 208));
-        verticalLayout_6 = new QVBoxLayout(widget_4);
-        verticalLayout_6->setSpacing(0);
-        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
-        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
-        progressBar = new QSlider(widget_4);
+
+        horizontalLayout_2->addWidget(widget);
+
+        stackedWidget->addWidget(root_widget_3);
+
+        verticalLayout->addWidget(stackedWidget);
+
+        widget_6 = new QWidget(centralwidget);
+        widget_6->setObjectName(QString::fromUtf8("widget_6"));
+        widget_6->setMaximumSize(QSize(16777215, 208));
+        verticalLayout_10 = new QVBoxLayout(widget_6);
+        verticalLayout_10->setSpacing(0);
+        verticalLayout_10->setObjectName(QString::fromUtf8("verticalLayout_10"));
+        verticalLayout_10->setContentsMargins(0, 0, 0, 0);
+        progressBar = new QSlider(widget_6);
         progressBar->setObjectName(QString::fromUtf8("progressBar"));
         progressBar->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "background-image: url(:/resource/Rectangle 6152.png);"));
         progressBar->setOrientation(Qt::Horizontal);
 
-        verticalLayout_6->addWidget(progressBar);
+        verticalLayout_10->addWidget(progressBar);
 
-        audio_control_container = new QWidget(widget_4);
+        audio_control_container = new QWidget(widget_6);
         audio_control_container->setObjectName(QString::fromUtf8("audio_control_container"));
         audio_control_container->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "background-image: url(:/resource/Rectangle 34624644.png);"));
-        horizontalLayout_2 = new QHBoxLayout(audio_control_container);
-        horizontalLayout_2->setSpacing(0);
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout_4 = new QHBoxLayout(audio_control_container);
+        horizontalLayout_4->setSpacing(0);
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
         label_music_cover = new QLabel(audio_control_container);
         label_music_cover->setObjectName(QString::fromUtf8("label_music_cover"));
         label_music_cover->setMaximumSize(QSize(120, 120));
@@ -235,29 +248,29 @@ public:
 "background-image: url(:/resource/Group 1000005021.png);"));
         label_music_cover->setScaledContents(true);
 
-        horizontalLayout_2->addWidget(label_music_cover);
+        horizontalLayout_4->addWidget(label_music_cover);
 
-        widget_7 = new QWidget(audio_control_container);
-        widget_7->setObjectName(QString::fromUtf8("widget_7"));
-        widget_7->setMaximumSize(QSize(300, 16777215));
-        widget_7->setStyleSheet(QString::fromUtf8("background:transparent;"));
-        verticalLayout_7 = new QVBoxLayout(widget_7);
-        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
-        label_name = new QLabel(widget_7);
+        widget_10 = new QWidget(audio_control_container);
+        widget_10->setObjectName(QString::fromUtf8("widget_10"));
+        widget_10->setMaximumSize(QSize(300, 16777215));
+        widget_10->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        verticalLayout_11 = new QVBoxLayout(widget_10);
+        verticalLayout_11->setObjectName(QString::fromUtf8("verticalLayout_11"));
+        label_name = new QLabel(widget_10);
         label_name->setObjectName(QString::fromUtf8("label_name"));
         label_name->setFont(font);
         label_name->setStyleSheet(QString::fromUtf8("color: white;background:transparent;"));
 
-        verticalLayout_7->addWidget(label_name);
+        verticalLayout_11->addWidget(label_name);
 
-        label_author = new QLabel(widget_7);
+        label_author = new QLabel(widget_10);
         label_author->setObjectName(QString::fromUtf8("label_author"));
         label_author->setStyleSheet(QString::fromUtf8("color: white;background:transparent;"));
 
-        verticalLayout_7->addWidget(label_author);
+        verticalLayout_11->addWidget(label_author);
 
 
-        horizontalLayout_2->addWidget(widget_7);
+        horizontalLayout_4->addWidget(widget_10);
 
         pushButton_previous = new QPushButton(audio_control_container);
         pushButton_previous->setObjectName(QString::fromUtf8("pushButton_previous"));
@@ -265,7 +278,7 @@ public:
         pushButton_previous->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "background-image: url(:/resource/previous.png);"));
 
-        horizontalLayout_2->addWidget(pushButton_previous);
+        horizontalLayout_4->addWidget(pushButton_previous);
 
         pushButton_play = new QPushButton(audio_control_container);
         pushButton_play->setObjectName(QString::fromUtf8("pushButton_play"));
@@ -279,7 +292,7 @@ public:
         pushButton_play->setIconSize(QSize(130, 130));
         pushButton_play->setCheckable(true);
 
-        horizontalLayout_2->addWidget(pushButton_play);
+        horizontalLayout_4->addWidget(pushButton_play);
 
         pushButton_next = new QPushButton(audio_control_container);
         pushButton_next->setObjectName(QString::fromUtf8("pushButton_next"));
@@ -287,7 +300,7 @@ public:
         pushButton_next->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "background-image: url(:/resource/next.png);"));
 
-        horizontalLayout_2->addWidget(pushButton_next);
+        horizontalLayout_4->addWidget(pushButton_next);
 
         pushButton_volume = new QPushButton(audio_control_container);
         pushButton_volume->setObjectName(QString::fromUtf8("pushButton_volume"));
@@ -296,32 +309,28 @@ public:
 "background-image: url(:/resource/volume.png);"));
         pushButton_volume->setIconSize(QSize(16, 16));
 
-        horizontalLayout_2->addWidget(pushButton_volume);
+        horizontalLayout_4->addWidget(pushButton_volume);
 
 
-        verticalLayout_6->addWidget(audio_control_container);
+        verticalLayout_10->addWidget(audio_control_container);
 
-        volumeBar = new QSlider(widget_4);
+        volumeBar = new QSlider(widget_6);
         volumeBar->setObjectName(QString::fromUtf8("volumeBar"));
         volumeBar->setMaximumSize(QSize(16777215, 5));
         volumeBar->setMaximum(100);
         volumeBar->setSliderPosition(50);
         volumeBar->setOrientation(Qt::Vertical);
 
-        verticalLayout_6->addWidget(volumeBar);
+        verticalLayout_10->addWidget(volumeBar);
 
 
-        verticalLayout_3->addWidget(widget_4);
-
-        stackedWidget->addWidget(root_widget);
-
-        verticalLayout->addWidget(stackedWidget);
+        verticalLayout->addWidget(widget_6);
 
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
