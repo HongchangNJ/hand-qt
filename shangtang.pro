@@ -18,13 +18,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    mybutton.cpp \
-    playerslider.cpp
+    videowidget.cpp
 
 HEADERS += \
     mainwindow.h \
-    mybutton.h \
-    playerslider.h
+    videowidget.h
 
 FORMS += \
     mainwindow.ui
@@ -42,7 +40,3 @@ DISTFILES += \
     resource/Mask group2.png \
     resource/Mask group3.png \
     resource/Mask group4.png \
-    resource/video_cover/e37cf3b326b9fc09a22de7b8bceb8ab7.png \
-    resource/video_cover/g++multi-file-compile-helloworld.png \
-    resource/video_cover/test.png \
-    resource/video_cover/第一节.png

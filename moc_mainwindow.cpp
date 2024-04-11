@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[7];
-    char stringdata0[89];
+    QByteArrayData data[17];
+    char stringdata0[314];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,17 +32,34 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 14), // "OnSetMediaFile"
-QT_MOC_LITERAL(2, 26, 0), // ""
-QT_MOC_LITERAL(3, 27, 8), // "OnSlider"
-QT_MOC_LITERAL(4, 36, 17), // "OnDurationChanged"
-QT_MOC_LITERAL(5, 54, 14), // "OnStateChanged"
-QT_MOC_LITERAL(6, 69, 19) // "QMediaPlayer::State"
+QT_MOC_LITERAL(1, 11, 26), // "on_pushButton_back_clicked"
+QT_MOC_LITERAL(2, 38, 0), // ""
+QT_MOC_LITERAL(3, 39, 26), // "on_pushButton_play_clicked"
+QT_MOC_LITERAL(4, 66, 8), // "playFile"
+QT_MOC_LITERAL(5, 75, 14), // "positionChange"
+QT_MOC_LITERAL(6, 90, 8), // "position"
+QT_MOC_LITERAL(7, 99, 28), // "on_pushButton_volume_clicked"
+QT_MOC_LITERAL(8, 128, 25), // "on_volumeBar_valueChanged"
+QT_MOC_LITERAL(9, 154, 5), // "value"
+QT_MOC_LITERAL(10, 160, 30), // "on_pushButton_previous_clicked"
+QT_MOC_LITERAL(11, 191, 26), // "on_pushButton_next_clicked"
+QT_MOC_LITERAL(12, 218, 25), // "on_music_list_itemClicked"
+QT_MOC_LITERAL(13, 244, 16), // "QListWidgetItem*"
+QT_MOC_LITERAL(14, 261, 4), // "item"
+QT_MOC_LITERAL(15, 266, 25), // "on_video_list_itemClicked"
+QT_MOC_LITERAL(16, 292, 21) // "on_video_back_clicked"
 
     },
-    "MainWindow\0OnSetMediaFile\0\0OnSlider\0"
-    "OnDurationChanged\0OnStateChanged\0"
-    "QMediaPlayer::State"
+    "MainWindow\0on_pushButton_back_clicked\0"
+    "\0on_pushButton_play_clicked\0playFile\0"
+    "positionChange\0position\0"
+    "on_pushButton_volume_clicked\0"
+    "on_volumeBar_valueChanged\0value\0"
+    "on_pushButton_previous_clicked\0"
+    "on_pushButton_next_clicked\0"
+    "on_music_list_itemClicked\0QListWidgetItem*\0"
+    "item\0on_video_list_itemClicked\0"
+    "on_video_back_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -52,7 +69,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -60,16 +77,30 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   34,    2, 0x08 /* Private */,
-       3,    1,   35,    2, 0x08 /* Private */,
-       4,    1,   38,    2, 0x08 /* Private */,
-       5,    1,   41,    2, 0x08 /* Private */,
+       1,    0,   69,    2, 0x08 /* Private */,
+       3,    0,   70,    2, 0x08 /* Private */,
+       4,    0,   71,    2, 0x08 /* Private */,
+       5,    1,   72,    2, 0x08 /* Private */,
+       7,    0,   75,    2, 0x08 /* Private */,
+       8,    1,   76,    2, 0x08 /* Private */,
+      10,    0,   79,    2, 0x08 /* Private */,
+      11,    0,   80,    2, 0x08 /* Private */,
+      12,    1,   81,    2, 0x08 /* Private */,
+      15,    1,   84,    2, 0x08 /* Private */,
+      16,    0,   87,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::LongLong,    2,
-    QMetaType::Void, QMetaType::LongLong,    2,
-    QMetaType::Void, 0x80000000 | 6,    2,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::LongLong,    6,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    9,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 13,   14,
+    QMetaType::Void, 0x80000000 | 13,   14,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -80,22 +111,18 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->OnSetMediaFile(); break;
-        case 1: _t->OnSlider((*reinterpret_cast< qint64(*)>(_a[1]))); break;
-        case 2: _t->OnDurationChanged((*reinterpret_cast< qint64(*)>(_a[1]))); break;
-        case 3: _t->OnStateChanged((*reinterpret_cast< QMediaPlayer::State(*)>(_a[1]))); break;
+        case 0: _t->on_pushButton_back_clicked(); break;
+        case 1: _t->on_pushButton_play_clicked(); break;
+        case 2: _t->playFile(); break;
+        case 3: _t->positionChange((*reinterpret_cast< qint64(*)>(_a[1]))); break;
+        case 4: _t->on_pushButton_volume_clicked(); break;
+        case 5: _t->on_volumeBar_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 6: _t->on_pushButton_previous_clicked(); break;
+        case 7: _t->on_pushButton_next_clicked(); break;
+        case 8: _t->on_music_list_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 9: _t->on_video_list_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 10: _t->on_video_back_clicked(); break;
         default: ;
-        }
-    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        switch (_id) {
-        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 3:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QMediaPlayer::State >(); break;
-            }
-            break;
         }
     }
 }
@@ -129,13 +156,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
-            qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        if (_id < 11)
+            *reinterpret_cast<int*>(_a[0]) = -1;
+        _id -= 11;
     }
     return _id;
 }

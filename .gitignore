@@ -5,4 +5,10 @@ shangtang.pro.user*
 Makefile
 Makefile.Debug
 Makefile.Release
+*.o
 main.o
+.qmake.stash
+shangtang
+mainwindow.o
+moc_mainwindow.o
+mainwindow.ui.autosave
