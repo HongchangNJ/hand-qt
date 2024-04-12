@@ -16,8 +16,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->progressBar->installEventFilter(this);
-    ui->volumeBar->setVisible(false);
+   // ui->volumeBar->setVisible(false);
     setAcceptDrops(true);
+    this->setWindowState(this->windowState() | Qt::WindowMaximized);
 
     ui->music_list->setFlow(QListView::TopToBottom);
     ui->music_list->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); //屏蔽水平滑动条
@@ -96,6 +97,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->label_music_cover->setPixmap(pixmap);
     ui->label_name->setText(music_cover_list.first().baseName());
 
+    volumeBar = new QSlider(Qt::Horizontal); ;
+
     connect(m_player, SIGNAL(positionChanged(qint64)), this, SLOT(positionChange(qint64)));
     connect(m_player, &QMediaPlayer::mediaStatusChanged, this, [=] (QMediaPlayer::MediaStatus status) {
         if (status == QMediaPlayer::MediaStatus::EndOfMedia)
@@ -114,9 +117,16 @@ MainWindow::~MainWindow()
 
 void MainWindow::paintEvent(QPaintEvent *)
 {
-    QPainter painter(this);
-    QPixmap pixmap("./resource/Group 1000005051.png");
-    painter.drawPixmap(this->rect(), pixmap);
+    QPainter painter_mainWindow(this);
+    QPixmap pixmap_mainWindow("./resource/Group 1000005051.png");
+    painter_mainWindow.drawPixmap(this->rect(), pixmap_mainWindow);
+
+    //QPainter painter_bottom(ui->audio_control_container);
+    QPalette palette;
+    QPixmap pixmap_bottom("./resource/Rectangle 34624654.png");
+    palette.setBrush(QPalette::Background, pixmap_bottom);
+    ui->audio_control_container->setPalette(palette);
+    //painter_bottom.drawPixmap(ui->audio_control_container->rect(), pixmap_bottom);
 }
 
 void MainWindow::on_pushButton_back_clicked()

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1303</width>
-    <height>574</height>
+    <width>1920</width>
+    <height>767</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,6 +20,12 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>600</height>
+       </size>
+      </property>
       <property name="currentIndex">
        <number>1</number>
       </property>
@@ -66,16 +72,34 @@ background-image: url(:/resource/Frame 41.png);</string>
        </layout>
       </widget>
       <widget class="QWidget" name="root_widget_3">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
          <widget class="QWidget" name="widget" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
           <layout class="QVBoxLayout" name="verticalLayout_12">
            <item>
             <widget class="QWidget" name="widget_2" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>100</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>96</height>
+               <height>100</height>
               </size>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">
@@ -131,37 +155,48 @@ background-image: url(:/resource/Frame 41.png);</string>
            </item>
            <item>
             <widget class="QWidget" name="widget_3" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>500</height>
+               <height>700</height>
               </size>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,2">
+             <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,2">
               <item>
                <widget class="QWidget" name="widget_11" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>800</width>
+                  <height>200</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>700</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background:transparent;
-background-image: url(:/resource/Rectangle 34624647.png);</string>
+background-image: url(:/resource/Rectangle 34624647.png);
+border-radius: 10px;
+background-position:center</string>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_5">
-                 <item>
-                  <widget class="QLabel" name="label_music_title">
-                   <property name="font">
-                    <font>
-                     <pointsize>16</pointsize>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: white；</string>
-                   </property>
-                   <property name="text">
-                    <string>单曲列表</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
+                <layout class="QGridLayout" name="gridLayout">
+                 <item row="3" column="1">
                   <widget class="QListWidget" name="music_list">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
                    <property name="font">
                     <font>
                      <pointsize>12</pointsize>
@@ -169,7 +204,8 @@ background-image: url(:/resource/Rectangle 34624647.png);</string>
                    </property>
                    <property name="styleSheet">
                     <string notr="true">background:transparent;
-border: 0px solid transparent;
+border-radius: 50px;
+
 </string>
                    </property>
                    <property name="autoScrollMargin">
@@ -186,17 +222,118 @@ border: 0px solid transparent;
                    </property>
                   </widget>
                  </item>
+                 <item row="0" column="1">
+                  <spacer name="verticalSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLabel" name="label_music_title">
+                   <property name="minimumSize">
+                    <size>
+                     <width>400</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>16</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: white;
+background:transparent;
+</string>
+                   </property>
+                   <property name="text">
+                    <string>单曲列表</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <spacer name="horizontalSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="3" column="2">
+                  <spacer name="horizontalSpacer_2">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="2" column="1">
+                  <spacer name="verticalSpacer_3">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
                 </layout>
                </widget>
               </item>
               <item>
                <widget class="QWidget" name="widget_12" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>200</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>700</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background:transparent;
-background-image: url(:/resource/Rectangle 34624646.png);</string>
+background-image: url(:/resource/Rectangle 34624646.png);
+border-radius: 10px;
+background-position:center</string>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_13">
-                 <item>
+                <layout class="QGridLayout" name="gridLayout_2">
+                 <item row="1" column="1">
                   <widget class="QLabel" name="label_video_title">
                    <property name="font">
                     <font>
@@ -204,14 +341,15 @@ background-image: url(:/resource/Rectangle 34624646.png);</string>
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">color: white；</string>
+                    <string notr="true">color: white;
+background:transparent;</string>
                    </property>
                    <property name="text">
                     <string>商汤绝影功能视频列表</string>
                    </property>
                   </widget>
                  </item>
-                 <item>
+                 <item row="2" column="1">
                   <widget class="QListWidget" name="video_list">
                    <property name="font">
                     <font>
@@ -236,6 +374,54 @@ border: 0px solid transparent;
                     <number>10</number>
                    </property>
                   </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <spacer name="verticalSpacer_2">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="2" column="0">
+                  <spacer name="horizontalSpacer_3">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="2" column="2">
+                  <spacer name="horizontalSpacer_4">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
                  </item>
                 </layout>
                </widget>
@@ -278,7 +464,7 @@ border: 0px solid transparent;
         <widget class="QSlider" name="progressBar">
          <property name="styleSheet">
           <string notr="true">background:transparent;
-background-image: url(:/resource/Rectangle 6152.png);</string>
+border-image: url(:/resource/Rectangle 6152.png);</string>
          </property>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -309,6 +495,12 @@ background-image: url(:/resource/Rectangle 34624644.png);</string>
           </property>
           <item>
            <widget class="QLabel" name="label_music_cover">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="maximumSize">
              <size>
               <width>120</width>
@@ -329,9 +521,21 @@ background-image: url(:/resource/Group 1000005021.png);</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_10" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>400</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="maximumSize">
              <size>
-              <width>300</width>
+              <width>400</width>
               <height>16777215</height>
              </size>
             </property>
@@ -341,6 +545,24 @@ background-image: url(:/resource/Group 1000005021.png);</string>
             <layout class="QVBoxLayout" name="verticalLayout_11">
              <item>
               <widget class="QLabel" name="label_name">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>400</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>400</width>
+                 <height>16777215</height>
+                </size>
+               </property>
                <property name="font">
                 <font>
                  <pointsize>16</pointsize>
@@ -356,6 +578,24 @@ background-image: url(:/resource/Group 1000005021.png);</string>
              </item>
              <item>
               <widget class="QLabel" name="label_author">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>400</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>400</width>
+                 <height>16777215</height>
+                </size>
+               </property>
                <property name="styleSheet">
                 <string notr="true">color: white;background:transparent;</string>
                </property>
@@ -369,6 +609,12 @@ background-image: url(:/resource/Group 1000005021.png);</string>
           </item>
           <item>
            <widget class="QPushButton" name="pushButton_previous">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="maximumSize">
              <size>
               <width>86</width>
@@ -386,6 +632,12 @@ background-image: url(:/resource/previous.png);</string>
           </item>
           <item>
            <widget class="QPushButton" name="pushButton_play">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="maximumSize">
              <size>
               <width>128</width>
@@ -417,6 +669,12 @@ background-image: url(:/resource/previous.png);</string>
           </item>
           <item>
            <widget class="QPushButton" name="pushButton_next">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="maximumSize">
              <size>
               <width>86</width>
@@ -433,7 +691,20 @@ background-image: url(:/resource/next.png);</string>
            </widget>
           </item>
           <item>
+           <widget class="QSlider" name="volumeBar">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="pushButton_volume">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="maximumSize">
              <size>
               <width>75</width>
@@ -456,25 +727,6 @@ background-image: url(:/resource/volume.png);</string>
            </widget>
           </item>
          </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="volumeBar">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>5</height>
-          </size>
-         </property>
-         <property name="maximum">
-          <number>100</number>
-         </property>
-         <property name="sliderPosition">
-          <number>50</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
         </widget>
        </item>
       </layout>

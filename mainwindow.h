@@ -38,12 +38,6 @@ private slots:
 
     void on_volumeBar_valueChanged(int value);
 
-//    void button_left_slide();
-
-//    void button_right_slide();
-
-//    void on_pushButton_play_video_clicked();
-
     void on_pushButton_previous_clicked();
 
     void on_pushButton_next_clicked();
@@ -63,6 +57,8 @@ protected:
 
 private:
     Ui::MainWindow *ui;
+
+    QSlider *volumeBar;
 
     QMediaPlayer *m_player;
 

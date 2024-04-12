@@ -1,13 +1,7 @@
 debug
 release
-shangtang.pro.user
-shangtang.pro.user*
-Makefile
-Makefile.Debug
-Makefile.Release
+.qmake.stash
 shangtang
-*.o
-main.o
-.qmake.stashmainwindow.o
-moc_mainwindow.o
-mainwindow.ui.autosave
+shangtang.pro.user
+Makefile.debug
+Makefile.Release

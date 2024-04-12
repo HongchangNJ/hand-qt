@@ -8,7 +8,6 @@
         <file>resource/shuffle.png</file>
         <file>resource/volume.png</file>
         <file>resource/Rectangle 34624646.png</file>
-        <file>resource/Rectangle 34624647.png</file>
         <file>resource/Rectangle 6152.png</file>
         <file>resource/Frame 41.png</file>
         <file>resource/Rectangle 34624663.png</file>
@@ -21,5 +20,8 @@
         <file>resource/video_cover/e37cf3b326b9fc09a22de7b8bceb8ab7.png</file>
         <file>resource/video_cover/g++multi-file-compile-helloworld.png</file>
         <file>resource/video_cover/test.png</file>
+        <file>resource/Rectangle 34624654.png</file>
+        <file>resource/Rectangle 34624647.png</file>
+        <file>resource/Ellipse 1937.png</file>
     </qresource>
 </RCC>

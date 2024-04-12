@@ -35,8 +35,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     resource.qrc
 
-DISTFILES += \
-    resource/Mask group1.png \
-    resource/Mask group2.png \
-    resource/Mask group3.png \
-    resource/Mask group4.png \
+
