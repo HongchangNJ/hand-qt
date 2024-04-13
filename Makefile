@@ -713,18 +713,19 @@ compiler_rcc_clean:
 qrc_resource.cpp: resource.qrc \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/bin/rcc \
 		resource/Rectangle\ 34624647.png \
-		resource/Subtract.png \
 		resource/shuffle.png \
+		resource/icon_pause.png \
 		resource/Rectangle\ 6152.png \
 		resource/Frame\ 41.png \
+		resource/icon_play.png \
 		resource/volume.png \
 		resource/Group\ 1000005051.png \
 		resource/Ellipse\ 1937.png \
+		resource/icon_slider.png \
 		resource/Rectangle\ 34624663.png \
 		resource/previous.png \
 		resource/Rectangle\ 34624654.png \
 		resource/next.png \
-		resource/Group\ 1000005035.png \
 		resource/Rectangle\ 34624644.png \
 		resource/status_bar.png \
 		resource/Rectangle\ 34624646.png \
@@ -1482,6 +1483,33 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qtabbar.h \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qrubberband.h \
 		ui_mainwindow.h \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QApplication \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qapplication.h \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcoreapplication.h \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qeventloop.h \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qguiapplication.h \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qinputmethod.h \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QGridLayout \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qlayout.h \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QListWidget \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QPushButton \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QSlider \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QSpacerItem \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QStackedWidget \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qstackedwidget.h \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QWidget \
+		videowidget.h \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtMultimediaWidgets/QVideoWidget \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtMultimediaWidgets/qvideowidget.h \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtMultimediaWidgets/qtmultimediawidgetdefs.h \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QDebug \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/QDragEnterEvent \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/QDropEvent \

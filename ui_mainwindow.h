@@ -83,7 +83,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(3602, 743);
+        MainWindow->resize(1920, 743);
         MainWindow->setStyleSheet(QString::fromUtf8("QMainWindow::titleBar { background-color: red; }"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
@@ -141,8 +141,8 @@ public:
 
         widget_2 = new QWidget(root_widget_3);
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
-        widget_2->setMinimumSize(QSize(0, 100));
-        widget_2->setMaximumSize(QSize(16777215, 100));
+        widget_2->setMinimumSize(QSize(0, 60));
+        widget_2->setMaximumSize(QSize(16777215, 96));
         horizontalLayout = new QHBoxLayout(widget_2);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(-1, 0, -1, 0);
@@ -163,7 +163,7 @@ public:
         QFont font1;
         font1.setPointSize(24);
         label_title->setFont(font1);
-        label_title->setStyleSheet(QString::fromUtf8("color: white\357\274\233"));
+        label_title->setStyleSheet(QString::fromUtf8("color:white"));
         label_title->setAlignment(Qt::AlignCenter);
 
         horizontalLayout->addWidget(label_title);
@@ -203,7 +203,7 @@ public:
         music_list->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         music_list->setAutoScrollMargin(150);
         music_list->setProperty("showDropIndicator", QVariant(true));
-        music_list->setDragEnabled(true);
+        music_list->setDragEnabled(false);
         music_list->setIconSize(QSize(100, 100));
         music_list->setBatchSize(10);
 
@@ -261,9 +261,7 @@ public:
         QFont font3;
         font3.setPointSize(1);
         video_list->setFont(font3);
-        video_list->setStyleSheet(QString::fromUtf8("background:transparent;\n"
-"border: 0px solid transparent;\n"
-""));
+        video_list->setStyleSheet(QString::fromUtf8(""));
         video_list->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         video_list->setAutoScrollMargin(150);
         video_list->setIconSize(QSize(480, 360));
@@ -298,22 +296,23 @@ public:
         widget_6 = new QWidget(centralwidget);
         widget_6->setObjectName(QString::fromUtf8("widget_6"));
         widget_6->setMaximumSize(QSize(16777215, 208));
+        widget_6->setStyleSheet(QString::fromUtf8("background-image: url(:/resource/Rectangle 34624644.png);"));
         verticalLayout_10 = new QVBoxLayout(widget_6);
         verticalLayout_10->setSpacing(0);
         verticalLayout_10->setObjectName(QString::fromUtf8("verticalLayout_10"));
         verticalLayout_10->setContentsMargins(0, 0, 0, 0);
         progressBar = new QSlider(widget_6);
         progressBar->setObjectName(QString::fromUtf8("progressBar"));
-        progressBar->setStyleSheet(QString::fromUtf8("background:transparent;\n"
-"border-image: url(:/resource/Rectangle 6152.png);"));
+        progressBar->setMaximumSize(QSize(16777215, 90));
+        progressBar->setStyleSheet(QString::fromUtf8(""));
+        progressBar->setPageStep(1);
         progressBar->setOrientation(Qt::Horizontal);
 
         verticalLayout_10->addWidget(progressBar);
 
         audio_control_container = new QWidget(widget_6);
         audio_control_container->setObjectName(QString::fromUtf8("audio_control_container"));
-        audio_control_container->setStyleSheet(QString::fromUtf8("background:transparent;\n"
-"background-image: url(:/resource/Rectangle 34624644.png);"));
+        audio_control_container->setStyleSheet(QString::fromUtf8(""));
         horizontalLayout_4 = new QHBoxLayout(audio_control_container);
         horizontalLayout_4->setSpacing(0);
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
@@ -383,14 +382,15 @@ public:
         sizePolicy.setHeightForWidth(pushButton_play->sizePolicy().hasHeightForWidth());
         pushButton_play->setSizePolicy(sizePolicy);
         pushButton_play->setMaximumSize(QSize(128, 128));
-        pushButton_play->setStyleSheet(QString::fromUtf8("background:transparent;\n"
-""));
+        pushButton_play->setAutoFillBackground(false);
+        pushButton_play->setStyleSheet(QString::fromUtf8(""));
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/resource/Group 1000005035.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon.addFile(QString::fromUtf8(":/resource/Subtract.png"), QSize(), QIcon::Normal, QIcon::On);
+        icon.addFile(QString::fromUtf8(":/resource/icon_play.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8(":/resource/icon_pause.png"), QSize(), QIcon::Normal, QIcon::On);
         pushButton_play->setIcon(icon);
-        pushButton_play->setIconSize(QSize(130, 130));
+        pushButton_play->setIconSize(QSize(128, 128));
         pushButton_play->setCheckable(true);
+        pushButton_play->setFlat(true);
 
         horizontalLayout_4->addWidget(pushButton_play);
 

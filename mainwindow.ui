@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>3602</width>
+    <width>1920</width>
     <height>743</height>
    </rect>
   </property>
@@ -130,13 +130,13 @@ background-image: url(:/resource/Frame 41.png);</string>
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>100</height>
+            <height>60</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>16777215</width>
-            <height>100</height>
+            <height>96</height>
            </size>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">
@@ -189,7 +189,7 @@ background-image: url(:/resource/Frame 41.png);</string>
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: white；</string>
+              <string notr="true">color:white</string>
              </property>
              <property name="text">
               <string>商汤绝影 3D手势功能体验</string>
@@ -282,7 +282,7 @@ border-radius: 50px;
                  <bool>true</bool>
                 </property>
                 <property name="dragEnabled">
-                 <bool>true</bool>
+                 <bool>false</bool>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -430,9 +430,7 @@ background:transparent;</string>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background:transparent;
-border: 0px solid transparent;
-</string>
+                 <string notr="true"/>
                 </property>
                 <property name="horizontalScrollBarPolicy">
                  <enum>Qt::ScrollBarAlwaysOn</enum>
@@ -517,7 +515,10 @@ border: 0px solid transparent;
         <height>208</height>
        </size>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_10">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/resource/Rectangle 34624644.png);</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_10" stretch="0,0">
        <property name="spacing">
         <number>0</number>
        </property>
@@ -535,9 +536,17 @@ border: 0px solid transparent;
        </property>
        <item>
         <widget class="QSlider" name="progressBar">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>90</height>
+          </size>
+         </property>
          <property name="styleSheet">
-          <string notr="true">background:transparent;
-border-image: url(:/resource/Rectangle 6152.png);</string>
+          <string notr="true"/>
+         </property>
+         <property name="pageStep">
+          <number>1</number>
          </property>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -547,8 +556,7 @@ border-image: url(:/resource/Rectangle 6152.png);</string>
        <item>
         <widget class="QWidget" name="audio_control_container" native="true">
          <property name="styleSheet">
-          <string notr="true">background:transparent;
-background-image: url(:/resource/Rectangle 34624644.png);</string>
+          <string notr="true"/>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <property name="spacing">
@@ -717,25 +725,30 @@ background-image: url(:/resource/previous.png);</string>
               <height>128</height>
              </size>
             </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
             <property name="styleSheet">
-             <string notr="true">background:transparent;
-</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="icon">
              <iconset resource="resource.qrc">
-              <normaloff>:/resource/Group 1000005035.png</normaloff>
-              <normalon>:/resource/Subtract.png</normalon>:/resource/Group 1000005035.png</iconset>
+              <normaloff>:/resource/icon_play.png</normaloff>
+              <normalon>:/resource/icon_pause.png</normalon>:/resource/icon_play.png</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>130</width>
-              <height>130</height>
+              <width>128</width>
+              <height>128</height>
              </size>
             </property>
             <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="flat">
              <bool>true</bool>
             </property>
            </widget>

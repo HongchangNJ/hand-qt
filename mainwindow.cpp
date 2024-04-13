@@ -20,10 +20,47 @@ MainWindow::MainWindow(QWidget *parent)
     setAcceptDrops(true);
     this->setWindowState(this->windowState() | Qt::WindowMaximized);
 
+    // set ui style
+    // QSlide style  background:transparent;\nborder-image: url(:/resource/Rectangle 6152.png);
+    ui->progressBar->setStyleSheet("QSlider {"
+                                       "min-height: 40px;"  // 设置滑动条的最小高度
+                                       "max-height: 40px;"  // 设置滑动条的最大高度
+                                   "}"
+                                   "QSlider::groove:horizontal {"
+                                        "border-radius: 5px;"  // 槽的圆角
+                                   "}"
+                                   "QSlider::handle:horizontal {"
+                                        "background-color: #1EC9FF;"  // 滑块的背景颜色
+                                        "width: 40px;"  // 滑块的宽度
+                                        "height: 40px;"  // 滑块的高度
+                                        "border-radius: 20px;"  // 设置边角为滑块宽度的一半，产生圆形效果
+                                   "}"
+                                   "QSlider::sub-page:horizontal {"
+                                        "background-image: url(:/resource/Rectangle 6152.png);"  // 滑块左侧使用图片背景
+                                        "margin-top:10px;"
+                                        "margin-bottom:10px;"
+                                   "}"
+                                   "QSlider::add-page:horizontal {"
+                                        "background: rgba(255, 255, 255, 50);"  // 滑块右侧的颜色
+                                        "margin-top:10px;"
+                                        "margin-bottom:10px;"
+                                   "}"
+                                   );
+
+    // 播放按钮样式设置 background:transparent;\nbackground-image: url(:/resource/icon_play.png);
+    ui->pushButton_play->setAttribute(Qt::WidgetAttribute::WA_TranslucentBackground);
+    ui->pushButton_play->setFlat(true);
+    // ui->pushButton_play->setStyleSheet("border:none;");
+//    QPalette palette = ui->pushButton_play->palette();
+//    palette.setColor(QPalette::Button, Qt::transparent);
+//    ui->pushButton_play->setPalette(palette);
+//    ui->pushButton_play->setAutoFillBackground(true);
+
     ui->music_list->setFlow(QListView::TopToBottom);
     ui->music_list->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); //屏蔽水平滑动条
     ui->music_list->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff); //屏蔽垂直滑动条
     ui->music_list->setHorizontalScrollMode(QListWidget::ScrollPerPixel); //设置为像素滚动
+    ui->music_list->setStyleSheet("QListWidget::item:selected { background-color: rgba(255, 255, 255，90%); }");
     QScroller::grabGesture(ui->music_list, QScroller::LeftMouseButtonGesture);
 
     QDir music_dir(QDir::currentPath() + ("/resource/music/"));
@@ -104,6 +141,17 @@ MainWindow::MainWindow(QWidget *parent)
         if (status == QMediaPlayer::MediaStatus::EndOfMedia)
         {
             playFile();
+        }
+    });
+    connect(m_player, &QMediaPlayer::stateChanged, this, [=] (QMediaPlayer::State newState) {
+        if (newState == QMediaPlayer::State::PlayingState) {
+            ui->pushButton_play->setChecked(true);
+        } else if (newState == QMediaPlayer::State::PausedState) {
+            ui->pushButton_play->setChecked(false);
+
+        } else if (newState == QMediaPlayer::State::StoppedState) {
+            ui->pushButton_play->setChecked(false);
+
         }
     });
     connect(ui->music_list, &QListWidget::itemClicked, this, &MainWindow::on_music_list_itemClicked);
