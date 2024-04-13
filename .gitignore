@@ -5,3 +5,4 @@ shangtang
 shangtang.pro.user
 Makefile.debug
 Makefile.Release
+*.o

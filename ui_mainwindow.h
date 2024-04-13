@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.14.2
+** Created by: Qt User Interface Compiler version 5.12.12
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -38,9 +38,10 @@ public:
     QPushButton *video_back;
     VideoWidget *video_widget;
     QWidget *root_widget_3;
-    QHBoxLayout *horizontalLayout_2;
+    QVBoxLayout *verticalLayout_2;
     QWidget *widget;
-    QVBoxLayout *verticalLayout_12;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label;
     QWidget *widget_2;
     QHBoxLayout *horizontalLayout;
     QPushButton *pushButton_back;
@@ -82,12 +83,14 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1920, 767);
+        MainWindow->resize(3602, 743);
         MainWindow->setStyleSheet(QString::fromUtf8("QMainWindow::titleBar { background-color: red; }"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
+        verticalLayout->setSpacing(0);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
         stackedWidget->setMinimumSize(QSize(0, 600));
@@ -117,21 +120,35 @@ public:
         root_widget_3 = new QWidget();
         root_widget_3->setObjectName(QString::fromUtf8("root_widget_3"));
         root_widget_3->setMinimumSize(QSize(0, 0));
-        horizontalLayout_2 = new QHBoxLayout(root_widget_3);
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        verticalLayout_2 = new QVBoxLayout(root_widget_3);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         widget = new QWidget(root_widget_3);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setMinimumSize(QSize(0, 0));
-        verticalLayout_12 = new QVBoxLayout(widget);
-        verticalLayout_12->setObjectName(QString::fromUtf8("verticalLayout_12"));
-        widget_2 = new QWidget(widget);
+        horizontalLayout_2 = new QHBoxLayout(widget);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        label = new QLabel(widget);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setMaximumSize(QSize(1792, 40));
+        label->setStyleSheet(QString::fromUtf8(""));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/resource/status_bar.png")));
+        label->setScaledContents(true);
+        label->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout_2->addWidget(label);
+
+
+        verticalLayout_2->addWidget(widget);
+
+        widget_2 = new QWidget(root_widget_3);
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
         widget_2->setMinimumSize(QSize(0, 100));
         widget_2->setMaximumSize(QSize(16777215, 100));
         horizontalLayout = new QHBoxLayout(widget_2);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setContentsMargins(-1, 0, -1, 0);
         pushButton_back = new QPushButton(widget_2);
         pushButton_back->setObjectName(QString::fromUtf8("pushButton_back"));
+        pushButton_back->setEnabled(false);
         pushButton_back->setMinimumSize(QSize(96, 96));
         pushButton_back->setMaximumSize(QSize(96, 96));
         pushButton_back->setStyleSheet(QString::fromUtf8("background:transparent;\n"
@@ -142,6 +159,7 @@ public:
 
         label_title = new QLabel(widget_2);
         label_title->setObjectName(QString::fromUtf8("label_title"));
+        label_title->setEnabled(true);
         QFont font1;
         font1.setPointSize(24);
         label_title->setFont(font1);
@@ -152,17 +170,19 @@ public:
 
         horizontalLayout->setStretch(1, 1);
 
-        verticalLayout_12->addWidget(widget_2);
+        verticalLayout_2->addWidget(widget_2);
 
-        widget_3 = new QWidget(widget);
+        widget_3 = new QWidget(root_widget_3);
         widget_3->setObjectName(QString::fromUtf8("widget_3"));
         widget_3->setMinimumSize(QSize(0, 200));
         widget_3->setMaximumSize(QSize(16777215, 700));
         horizontalLayout_5 = new QHBoxLayout(widget_3);
+        horizontalLayout_5->setSpacing(20);
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        horizontalLayout_5->setContentsMargins(20, 20, 20, 20);
         widget_11 = new QWidget(widget_3);
         widget_11->setObjectName(QString::fromUtf8("widget_11"));
-        widget_11->setMinimumSize(QSize(800, 200));
+        widget_11->setMinimumSize(QSize(600, 200));
         widget_11->setMaximumSize(QSize(16777215, 700));
         widget_11->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "background-image: url(:/resource/Rectangle 34624647.png);\n"
@@ -180,7 +200,10 @@ public:
 "border-radius: 50px;\n"
 "\n"
 ""));
+        music_list->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         music_list->setAutoScrollMargin(150);
+        music_list->setProperty("showDropIndicator", QVariant(true));
+        music_list->setDragEnabled(true);
         music_list->setIconSize(QSize(100, 100));
         music_list->setBatchSize(10);
 
@@ -241,6 +264,7 @@ public:
         video_list->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "border: 0px solid transparent;\n"
 ""));
+        video_list->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         video_list->setAutoScrollMargin(150);
         video_list->setIconSize(QSize(480, 360));
         video_list->setBatchSize(10);
@@ -262,12 +286,10 @@ public:
 
         horizontalLayout_5->addWidget(widget_12);
 
-        horizontalLayout_5->setStretch(1, 2);
+        horizontalLayout_5->setStretch(0, 1);
+        horizontalLayout_5->setStretch(1, 5);
 
-        verticalLayout_12->addWidget(widget_3);
-
-
-        horizontalLayout_2->addWidget(widget);
+        verticalLayout_2->addWidget(widget_3);
 
         stackedWidget->addWidget(root_widget_3);
 
@@ -417,15 +439,16 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         video_back->setText(QString());
+        label->setText(QString());
         pushButton_back->setText(QString());
-        label_title->setText(QCoreApplication::translate("MainWindow", "\345\225\206\346\261\244\347\273\235\345\275\261 3D\346\211\213\345\212\277\345\212\237\350\203\275\344\275\223\351\252\214", nullptr));
-        label_music_title->setText(QCoreApplication::translate("MainWindow", "\345\215\225\346\233\262\345\210\227\350\241\250", nullptr));
-        label_video_title->setText(QCoreApplication::translate("MainWindow", "\345\225\206\346\261\244\347\273\235\345\275\261\345\212\237\350\203\275\350\247\206\351\242\221\345\210\227\350\241\250", nullptr));
+        label_title->setText(QApplication::translate("MainWindow", "\345\225\206\346\261\244\347\273\235\345\275\261 3D\346\211\213\345\212\277\345\212\237\350\203\275\344\275\223\351\252\214", nullptr));
+        label_music_title->setText(QApplication::translate("MainWindow", "\345\215\225\346\233\262\345\210\227\350\241\250", nullptr));
+        label_video_title->setText(QApplication::translate("MainWindow", "\345\225\206\346\261\244\347\273\235\345\275\261\345\212\237\350\203\275\350\247\206\351\242\221\345\210\227\350\241\250", nullptr));
         label_music_cover->setText(QString());
-        label_name->setText(QCoreApplication::translate("MainWindow", "Mia &Sebastian's Theme", nullptr));
-        label_author->setText(QCoreApplication::translate("MainWindow", "Justin Hurwitz", nullptr));
+        label_name->setText(QApplication::translate("MainWindow", "Mia &Sebastian's Theme", nullptr));
+        label_author->setText(QApplication::translate("MainWindow", "Justin Hurwitz", nullptr));
         pushButton_previous->setText(QString());
         pushButton_play->setText(QString());
         pushButton_next->setText(QString());

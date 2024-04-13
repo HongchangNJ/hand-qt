@@ -23,5 +23,6 @@
         <file>resource/Rectangle 34624654.png</file>
         <file>resource/Rectangle 34624647.png</file>
         <file>resource/Ellipse 1937.png</file>
+        <file>resource/status_bar.png</file>
     </qresource>
 </RCC>
