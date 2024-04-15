@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'musicform.ui'
 **
-** Created by: Qt User Interface Compiler version 5.14.2
+** Created by: Qt User Interface Compiler version 5.12.12
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -77,11 +77,11 @@ public:
 
     void retranslateUi(QWidget *musicForm)
     {
-        musicForm->setWindowTitle(QCoreApplication::translate("musicForm", "Form", nullptr));
-        label_music_author->setText(QCoreApplication::translate("musicForm", "author", nullptr));
+        musicForm->setWindowTitle(QApplication::translate("musicForm", "Form", nullptr));
+        label_music_author->setText(QApplication::translate("musicForm", "author", nullptr));
         pushButton->setText(QString());
         label_icon->setText(QString());
-        label_music_title->setText(QCoreApplication::translate("musicForm", "title", nullptr));
+        label_music_title->setText(QApplication::translate("musicForm", "title", nullptr));
     } // retranslateUi
 
 };

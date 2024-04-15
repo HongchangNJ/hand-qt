@@ -1722,34 +1722,6 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qtabbar.h \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qrubberband.h \
 		ui_mainwindow.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/QIcon \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QApplication \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qapplication.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcoreapplication.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qeventloop.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qguiapplication.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qinputmethod.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QGridLayout \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qgridlayout.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qlayout.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qlayoutitem.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qboxlayout.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QHBoxLayout \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QListWidget \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QPushButton \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QSlider \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QSpacerItem \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QStackedWidget \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qstackedwidget.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QVBoxLayout \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QWidget \
-		videowidget.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtMultimediaWidgets/QVideoWidget \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtMultimediaWidgets/qvideowidget.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtMultimediaWidgets/qtmultimediawidgetdefs.h \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QDebug \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/QDragEnterEvent \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/QDropEvent \
@@ -1767,6 +1739,7 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QScopedPointer \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QMetaType \
 		musicform.h \
+		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QWidget \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/QMouseEvent \
 		ui_musicform.h \
 		videoform.h \
@@ -1879,21 +1852,6 @@ musicform.o: musicform.cpp musicform.h \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qtouchdevice.h \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/QMouseEvent \
 		ui_musicform.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QVariant \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QApplication \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qapplication.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcoreapplication.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qeventloop.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qguiapplication.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qinputmethod.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QLabel \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qlabel.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qframe.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QPushButton \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qicon.h \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o musicform.o musicform.cpp
 
@@ -2001,22 +1959,7 @@ videoform.o: videoform.cpp videoform.h \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qfiledevice.h \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qvector2d.h \
 		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qtouchdevice.h \
-		ui_videoform.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QVariant \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QApplication \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qapplication.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcoreapplication.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qeventloop.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qguiapplication.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qinputmethod.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QLabel \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qlabel.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qframe.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QPushButton \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../Tools/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qicon.h
+		ui_videoform.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o videoform.o videoform.cpp
 
 videowidget.o: videowidget.cpp videowidget.h \

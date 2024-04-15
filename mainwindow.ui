@@ -583,8 +583,7 @@ background:transparent;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background:transparent;
-border-image: url(:/resource/Rectangle 6152.png);</string>
+          <string notr="true"/>
          </property>
          <property name="pageStep">
           <number>1</number>

@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->progressBar->installEventFilter(this);
-   // ui->volumeBar->setVisible(false);
+    ui->volumeBar->setVisible(false);
     setAcceptDrops(true);
     this->setWindowState(this->windowState() | Qt::WindowMaximized);
 
@@ -29,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->progressBar->setStyleSheet("QSlider {"
                                        "min-height: 40px;"  // 设置滑动条的最小高度
                                        "max-height: 40px;"  // 设置滑动条的最大高度
+                                       "background-color:transparent;"
                                    "}"
                                    "QSlider::groove:horizontal {"
                                         "border-radius: 5px;"  // 槽的圆角
@@ -101,6 +102,7 @@ MainWindow::MainWindow(QWidget *parent)
         {
             positionChange(0);
             QPixmap pixmap("./resource/music_cover/" + music_title + ".png");
+            ui->label_music_cover->setVisible(true);
             ui->label_music_cover->setPixmap(pixmap);
             ui->label_name->setText(music_title);
             m_player->setMedia(QUrl::fromLocalFile(QDir::currentPath() + "/resource/music/" + music_title + ".mp3"));
@@ -111,6 +113,7 @@ MainWindow::MainWindow(QWidget *parent)
         connect(music_form, &musicForm::clicked, this, [=]()
         {
             //positionChange(0);
+            ui->label_music_cover->setVisible(true);
             QPixmap pixmap("./resource/music_cover/" + music_title + ".png");
             ui->label_music_cover->setPixmap(pixmap);
             ui->label_name->setText(music_title);
@@ -302,7 +305,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event)
 
 void MainWindow::on_pushButton_volume_clicked()
 {
-    ui->volumeBar->setVisible(true);
+    ui->volumeBar->setVisible(false);
 }
 
 void MainWindow::on_volumeBar_valueChanged(int value)

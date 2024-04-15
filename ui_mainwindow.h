@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.14.2
+** Created by: Qt User Interface Compiler version 5.12.12
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -320,8 +320,7 @@ public:
         progressBar = new QSlider(widget_6);
         progressBar->setObjectName(QString::fromUtf8("progressBar"));
         progressBar->setMaximumSize(QSize(16777215, 90));
-        progressBar->setStyleSheet(QString::fromUtf8("background:transparent;\n"
-"border-image: url(:/resource/Rectangle 6152.png);"));
+        progressBar->setStyleSheet(QString::fromUtf8(""));
         progressBar->setPageStep(1);
         progressBar->setOrientation(Qt::Horizontal);
 
@@ -456,16 +455,16 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         video_back->setText(QString());
         label->setText(QString());
         pushButton_back->setText(QString());
-        label_title->setText(QCoreApplication::translate("MainWindow", "\345\225\206\346\261\244\347\273\235\345\275\261 3D\346\211\213\345\212\277\345\212\237\350\203\275\344\275\223\351\252\214", nullptr));
-        label_music_title->setText(QCoreApplication::translate("MainWindow", "\345\215\225\346\233\262\345\210\227\350\241\250", nullptr));
-        label_video_title->setText(QCoreApplication::translate("MainWindow", "\345\225\206\346\261\244\347\273\235\345\275\261\345\212\237\350\203\275\350\247\206\351\242\221\345\210\227\350\241\250", nullptr));
+        label_title->setText(QApplication::translate("MainWindow", "\345\225\206\346\261\244\347\273\235\345\275\261 3D\346\211\213\345\212\277\345\212\237\350\203\275\344\275\223\351\252\214", nullptr));
+        label_music_title->setText(QApplication::translate("MainWindow", "\345\215\225\346\233\262\345\210\227\350\241\250", nullptr));
+        label_video_title->setText(QApplication::translate("MainWindow", "\345\225\206\346\261\244\347\273\235\345\275\261\345\212\237\350\203\275\350\247\206\351\242\221\345\210\227\350\241\250", nullptr));
         label_music_cover->setText(QString());
-        label_name->setText(QCoreApplication::translate("MainWindow", "Mia &Sebastian's Theme", nullptr));
-        label_author->setText(QCoreApplication::translate("MainWindow", "Justin Hurwitz", nullptr));
+        label_name->setText(QApplication::translate("MainWindow", "Mia &Sebastian's Theme", nullptr));
+        label_author->setText(QApplication::translate("MainWindow", "Justin Hurwitz", nullptr));
         pushButton_previous->setText(QString());
         pushButton_play->setText(QString());
         pushButton_next->setText(QString());

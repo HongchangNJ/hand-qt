@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'videoform.ui'
 **
-** Created by: Qt User Interface Compiler version 5.14.2
+** Created by: Qt User Interface Compiler version 5.12.12
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -58,7 +58,7 @@ public:
 
     void retranslateUi(QWidget *videoForm)
     {
-        videoForm->setWindowTitle(QCoreApplication::translate("videoForm", "Form", nullptr));
+        videoForm->setWindowTitle(QApplication::translate("videoForm", "Form", nullptr));
         pushButton->setText(QString());
         label_video_title->setText(QString());
         label_video_cover->setText(QString());
