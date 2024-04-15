@@ -96,9 +96,21 @@ background-image: url(:/resource/Frame 41.png);</string>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
          <widget class="QWidget" name="widget" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
             <widget class="QLabel" name="label">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="maximumSize">
               <size>
                <width>1792</width>
@@ -127,6 +139,12 @@ background-image: url(:/resource/Frame 41.png);</string>
         </item>
         <item>
          <widget class="QWidget" name="widget_2" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
             <width>0</width>
@@ -183,6 +201,12 @@ background-image: url(:/resource/Frame 41.png);</string>
              <property name="enabled">
               <bool>true</bool>
              </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <pointsize>24</pointsize>
@@ -236,7 +260,7 @@ background-image: url(:/resource/Frame 41.png);</string>
             <widget class="QWidget" name="widget_11" native="true">
              <property name="minimumSize">
               <size>
-               <width>600</width>
+               <width>800</width>
                <height>200</height>
               </size>
              </property>
@@ -257,13 +281,13 @@ background-position:center</string>
                <widget class="QListWidget" name="music_list">
                 <property name="minimumSize">
                  <size>
-                  <width>0</width>
+                  <width>600</width>
                   <height>0</height>
                  </size>
                 </property>
                 <property name="font">
                  <font>
-                  <pointsize>12</pointsize>
+                  <pointsize>1</pointsize>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -286,8 +310,8 @@ border-radius: 50px;
                 </property>
                 <property name="iconSize">
                  <size>
-                  <width>100</width>
-                  <height>100</height>
+                  <width>0</width>
+                  <height>0</height>
                  </size>
                 </property>
                 <property name="batchSize">
@@ -321,7 +345,7 @@ border-radius: 50px;
                 </property>
                 <property name="font">
                  <font>
-                  <pointsize>16</pointsize>
+                  <pointsize>20</pointsize>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -410,7 +434,7 @@ background-position:center</string>
                <widget class="QLabel" name="label_video_title">
                 <property name="font">
                  <font>
-                  <pointsize>16</pointsize>
+                  <pointsize>20</pointsize>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -422,7 +446,23 @@ background:transparent;</string>
                 </property>
                </widget>
               </item>
-              <item row="2" column="1">
+              <item row="0" column="1">
+               <spacer name="verticalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="3" column="1">
                <widget class="QListWidget" name="video_list">
                 <property name="font">
                  <font>
@@ -449,23 +489,23 @@ background:transparent;</string>
                 </property>
                </widget>
               </item>
-              <item row="0" column="1">
-               <spacer name="verticalSpacer_2">
+              <item row="3" column="2">
+               <spacer name="horizontalSpacer_4">
                 <property name="orientation">
-                 <enum>Qt::Vertical</enum>
+                 <enum>Qt::Horizontal</enum>
                 </property>
                 <property name="sizeType">
                  <enum>QSizePolicy::Fixed</enum>
                 </property>
                 <property name="sizeHint" stdset="0">
                  <size>
-                  <width>20</width>
-                  <height>40</height>
+                  <width>40</width>
+                  <height>20</height>
                  </size>
                 </property>
                </spacer>
               </item>
-              <item row="2" column="0">
+              <item row="3" column="0">
                <spacer name="horizontalSpacer_3">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
@@ -481,18 +521,18 @@ background:transparent;</string>
                 </property>
                </spacer>
               </item>
-              <item row="2" column="2">
-               <spacer name="horizontalSpacer_4">
+              <item row="2" column="1">
+               <spacer name="verticalSpacer_4">
                 <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
+                 <enum>Qt::Vertical</enum>
                 </property>
                 <property name="sizeType">
                  <enum>QSizePolicy::Fixed</enum>
                 </property>
                 <property name="sizeHint" stdset="0">
                  <size>
-                  <width>40</width>
-                  <height>20</height>
+                  <width>20</width>
+                  <height>40</height>
                  </size>
                 </property>
                </spacer>
@@ -543,7 +583,8 @@ background:transparent;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true"/>
+          <string notr="true">background:transparent;
+border-image: url(:/resource/Rectangle 6152.png);</string>
          </property>
          <property name="pageStep">
           <number>1</number>

@@ -25,5 +25,7 @@
         <file>resource/Ellipse 1937.png</file>
         <file>resource/status_bar.png</file>
         <file>resource/icon_slider.png</file>
+        <file>resource/play.png</file>
+        <file>resource/video_play.png</file>
     </qresource>
 </RCC>

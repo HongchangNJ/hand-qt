@@ -15,6 +15,6 @@ int main(int argc, char *argv[])
 
 //    w.setPalette(palette);
 
-    w.showFullScreen();
+    w.show();
     return a.exec();
 }

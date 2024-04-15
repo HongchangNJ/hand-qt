@@ -42,9 +42,9 @@ private slots:
 
     void on_pushButton_next_clicked();
 
-    void on_music_list_itemClicked(QListWidgetItem *item);
+    //void on_music_list_itemClicked(QListWidgetItem *item);
 
-    void on_video_list_itemClicked(QListWidgetItem *item);
+    //void on_video_list_itemClicked(QListWidgetItem *item);
 
     void on_video_back_clicked();
 

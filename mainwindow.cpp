@@ -8,6 +8,10 @@
 #include <QTime>
 #include <QListWidgetItem>
 #include <QScroller>
+#include "musicform.h"
+#include "ui_musicform.h"
+#include "videoform.h"
+#include "ui_videoform.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -82,12 +86,39 @@ MainWindow::MainWindow(QWidget *parent)
         QFileInfo fileInfo = music_cover_list.at(i);
         QPixmap pixmap(fileInfo.filePath());
         QListWidgetItem *imageItem = new QListWidgetItem;
+        musicForm *music_form = new musicForm;
+        music_form->ui->label_icon->setPixmap(pixmap);
+        music_form->ui->label_music_title->setText(fileInfo.baseName());
+        music_form->ui->label_music_author->setText("Justin Hurwitz");
         imageItem->setIcon(QIcon(pixmap));
         imageItem->setText(fileInfo.baseName());
-        imageItem->setSizeHint(QSize(400, 120));
-        imageItem->setTextAlignment(Qt::AlignCenter);
-        imageItem->setForeground(QColor(255, 255, 255));
+        imageItem->setSizeHint(QSize(400, 140));
         ui->music_list->addItem(imageItem);
+        ui->music_list->setItemWidget(imageItem, music_form);
+
+        QString music_title = music_form->ui->label_music_title->text();
+        connect(music_form->ui->pushButton, &QPushButton::clicked, this, [=]()
+        {
+            positionChange(0);
+            QPixmap pixmap("./resource/music_cover/" + music_title + ".png");
+            ui->label_music_cover->setPixmap(pixmap);
+            ui->label_name->setText(music_title);
+            m_player->setMedia(QUrl::fromLocalFile(QDir::currentPath() + "/resource/music/" + music_title + ".mp3"));
+            m_playerState = QMediaPlayer::PausedState;
+            playFile();
+            m_type = "music";
+        });
+        connect(music_form, &musicForm::clicked, this, [=]()
+        {
+            //positionChange(0);
+            QPixmap pixmap("./resource/music_cover/" + music_title + ".png");
+            ui->label_music_cover->setPixmap(pixmap);
+            ui->label_name->setText(music_title);
+            //m_player->setMedia(QUrl::fromLocalFile(QDir::currentPath() + "/resource/music/" + music_title + ".mp3"));
+            //m_playerState = QMediaPlayer::PausedState;
+            //playFile();
+            //m_type = "music";
+        });
     }
 
     ui->video_list->setFlow(QListView::LeftToRight);
@@ -112,21 +143,41 @@ MainWindow::MainWindow(QWidget *parent)
         QFileInfo fileInfo = m_videoCoverList.at(i);
         QPixmap pixmap(fileInfo.filePath());
 
-        QPainter painter(&pixmap);
-        QPen pen = painter.pen();
-        pen.setColor(Qt::white);
-        QFont font = painter.font();
-        font.setBold(true);
-        font.setPixelSize(30);
-        painter.setPen(pen);
-        painter.setFont(font);
-        painter.drawText(pixmap.rect(),Qt::AlignCenter,fileInfo.baseName());
+//        QPainter painter(&pixmap);
+//        QPen pen = painter.pen();
+//        pen.setColor(Qt::white);
+//        QFont font = painter.font();
+//        font.setBold(true);
+//        font.setPixelSize(30);
+//        painter.setPen(pen);
+//        painter.setFont(font);
+//        painter.drawText(pixmap.rect(),Qt::AlignCenter,fileInfo.baseName());
 
         QListWidgetItem *imageItem = new QListWidgetItem;
-        imageItem->setIcon(QIcon(pixmap));
-        imageItem->setText(fileInfo.baseName());
+//        imageItem->setIcon(QIcon(pixmap));
+//        imageItem->setText(fileInfo.baseName());
+//        imageItem->setSizeHint(QSize(480, 360));
+//        ui->video_list->addItem(imageItem);
+
+        videoForm *video_form = new videoForm;
+        video_form->ui->label_video_cover->setPixmap(pixmap);
+        video_form->ui->label_video_title->setText(fileInfo.baseName());
         imageItem->setSizeHint(QSize(480, 360));
         ui->video_list->addItem(imageItem);
+        ui->video_list->setItemWidget(imageItem, video_form);
+
+        QString video_title = video_form->ui->label_video_title->text();
+        connect(video_form->ui->pushButton, &QPushButton::clicked, this, [=]()
+        {
+            positionChange(0);
+            ui->stackedWidget->setCurrentIndex(0);
+            ui->label_music_cover->setVisible(false);
+            ui->label_name->setText(video_title);
+            m_player->setMedia(QUrl::fromLocalFile(QDir::currentPath() + "/resource/video/" + video_title + ".mp4"));
+            m_playerState = QMediaPlayer::PausedState;
+            playFile();
+            m_type = "video";
+        });
     }
 
     QFileInfo fileInfo = music_cover_list.first();
@@ -137,12 +188,12 @@ MainWindow::MainWindow(QWidget *parent)
     volumeBar = new QSlider(Qt::Horizontal); ;
 
     connect(m_player, SIGNAL(positionChanged(qint64)), this, SLOT(positionChange(qint64)));
-    connect(m_player, &QMediaPlayer::mediaStatusChanged, this, [=] (QMediaPlayer::MediaStatus status) {
-        if (status == QMediaPlayer::MediaStatus::EndOfMedia)
-        {
-            playFile();
-        }
-    });
+//    connect(m_player, &QMediaPlayer::mediaStatusChanged, this, [=] (QMediaPlayer::MediaStatus status) {
+//        if (status == QMediaPlayer::MediaStatus::EndOfMedia)
+//        {
+//            playFile();
+//        }
+//    });
     connect(m_player, &QMediaPlayer::stateChanged, this, [=] (QMediaPlayer::State newState) {
         if (newState == QMediaPlayer::State::PlayingState) {
             ui->pushButton_play->setChecked(true);
@@ -154,14 +205,15 @@ MainWindow::MainWindow(QWidget *parent)
 
         }
     });
-    connect(ui->music_list, &QListWidget::itemClicked, this, &MainWindow::on_music_list_itemClicked);
-    connect(ui->video_list, &QListWidget::itemClicked, this, &MainWindow::on_video_list_itemClicked);
+    //connect(ui->music_list, &QListWidget::itemClicked, this, &MainWindow::on_music_list_itemClicked);
+    //connect(ui->video_list, &QListWidget::itemClicked, this, &MainWindow::on_video_list_itemClicked);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+
 
 void MainWindow::paintEvent(QPaintEvent *)
 {
@@ -192,14 +244,15 @@ void MainWindow::on_pushButton_play_clicked()
     {
         m_player->pause();
     }
+
+    if(m_type == "music")
+        ui->stackedWidget->setCurrentIndex(1);
+    if(m_type == "video")
+        ui->stackedWidget->setCurrentIndex(0);
 }
 
 void MainWindow::playFile()
 {
-    //    if (m_player->playlist()->isEmpty())
-    //    {
-    //        return;
-    //    }
     if (m_playerState != QMediaPlayer::PlayingState)
     {
         m_playerState = QMediaPlayer::PlayingState;
@@ -361,31 +414,30 @@ void MainWindow::on_pushButton_next_clicked()
     }
 }
 
-void MainWindow::on_music_list_itemClicked(QListWidgetItem *item)
-{
-    positionChange(0);
-    QPixmap pixmap("./resource/music_cover/" + item->text() + ".png");
-    ui->label_music_cover->setPixmap(pixmap);
-    ui->label_name->setText(item->text());
-    m_player->setMedia(QUrl::fromLocalFile(QDir::currentPath() + "/resource/music/" + item->text() + ".mp3"));
-    m_playerState = QMediaPlayer::PausedState;
-    playFile();
-    m_type = "music";
-}
 
+//void MainWindow::on_music_list_itemClicked(QListWidgetItem *item)
+//{
+//    positionChange(0);
+//    QPixmap pixmap("./resource/music_cover/" + item->text() + ".png");
+//    ui->label_music_cover->setPixmap(pixmap);
+//    ui->label_name->setText(item->text());
+//    m_player->setMedia(QUrl::fromLocalFile(QDir::currentPath() + "/resource/music/" + item->text() + ".mp3"));
+//    m_playerState = QMediaPlayer::PausedState;
+//    playFile();
+//    m_type = "music";
+//}
 
-void MainWindow::on_video_list_itemClicked(QListWidgetItem *item)
-{
-    positionChange(0);
-    ui->stackedWidget->setCurrentIndex(0);
-    ui->label_music_cover->setVisible(false);
-    ui->label_name->setText(item->text());
-    m_player->setMedia(QUrl::fromLocalFile(QDir::currentPath() + "/resource/video/" + item->text() + ".mp4"));
-    m_playerState = QMediaPlayer::PausedState;
-    playFile();
-    m_type = "video";
-    // ui->video_widget->setFullScreen(true);
-}
+//void MainWindow::on_video_list_itemClicked(QListWidgetItem *item)
+//{
+//    positionChange(0);
+//    ui->stackedWidget->setCurrentIndex(0);
+//    ui->label_music_cover->setVisible(false);
+//    ui->label_name->setText(item->text());
+//    m_player->setMedia(QUrl::fromLocalFile(QDir::currentPath() + "/resource/video/" + item->text() + ".mp4"));
+//    m_playerState = QMediaPlayer::PausedState;
+//    playFile();
+//    m_type = "video";
+//}
 
 void MainWindow::on_video_back_clicked()
 {

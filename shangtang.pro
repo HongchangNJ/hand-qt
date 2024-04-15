@@ -18,14 +18,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    musicform.cpp \
+    videoform.cpp \
     videowidget.cpp
 
 HEADERS += \
     mainwindow.h \
+    musicform.h \
+    videoform.h \
     videowidget.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    musicform.ui \
+    videoform.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -34,5 +40,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     resource.qrc
+
+DISTFILES +=
 
 
