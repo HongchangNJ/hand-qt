@@ -29,6 +29,7 @@ public:
         if (videoForm->objectName().isEmpty())
             videoForm->setObjectName(QString::fromUtf8("videoForm"));
         videoForm->resize(480, 360);
+        videoForm->setStyleSheet(QString::fromUtf8("background:transparent"));
         pushButton = new QPushButton(videoForm);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(180, 120, 96, 96));

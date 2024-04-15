@@ -27,5 +27,6 @@
         <file>resource/icon_slider.png</file>
         <file>resource/play.png</file>
         <file>resource/video_play.png</file>
+        <file>resource/bg_btn_pressed.png</file>
     </qresource>
 </RCC>

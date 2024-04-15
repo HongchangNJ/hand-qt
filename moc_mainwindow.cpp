@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[13];
-    char stringdata0[240];
+    QByteArrayData data[14];
+    char stringdata0[261];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -43,7 +43,8 @@ QT_MOC_LITERAL(8, 128, 25), // "on_volumeBar_valueChanged"
 QT_MOC_LITERAL(9, 154, 5), // "value"
 QT_MOC_LITERAL(10, 160, 30), // "on_pushButton_previous_clicked"
 QT_MOC_LITERAL(11, 191, 26), // "on_pushButton_next_clicked"
-QT_MOC_LITERAL(12, 218, 21) // "on_video_back_clicked"
+QT_MOC_LITERAL(12, 218, 21), // "on_video_back_clicked"
+QT_MOC_LITERAL(13, 240, 20) // "toggle_volumeControl"
 
     },
     "MainWindow\0on_pushButton_back_clicked\0"
@@ -53,7 +54,7 @@ QT_MOC_LITERAL(12, 218, 21) // "on_video_back_clicked"
     "on_volumeBar_valueChanged\0value\0"
     "on_pushButton_previous_clicked\0"
     "on_pushButton_next_clicked\0"
-    "on_video_back_clicked"
+    "on_video_back_clicked\0toggle_volumeControl"
 };
 #undef QT_MOC_LITERAL
 
@@ -63,7 +64,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -71,15 +72,16 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   59,    2, 0x08 /* Private */,
-       3,    0,   60,    2, 0x08 /* Private */,
-       4,    0,   61,    2, 0x08 /* Private */,
-       5,    1,   62,    2, 0x08 /* Private */,
-       7,    0,   65,    2, 0x08 /* Private */,
-       8,    1,   66,    2, 0x08 /* Private */,
-      10,    0,   69,    2, 0x08 /* Private */,
-      11,    0,   70,    2, 0x08 /* Private */,
-      12,    0,   71,    2, 0x08 /* Private */,
+       1,    0,   64,    2, 0x08 /* Private */,
+       3,    0,   65,    2, 0x08 /* Private */,
+       4,    0,   66,    2, 0x08 /* Private */,
+       5,    1,   67,    2, 0x08 /* Private */,
+       7,    0,   70,    2, 0x08 /* Private */,
+       8,    1,   71,    2, 0x08 /* Private */,
+      10,    0,   74,    2, 0x08 /* Private */,
+      11,    0,   75,    2, 0x08 /* Private */,
+      12,    0,   76,    2, 0x08 /* Private */,
+      13,    0,   77,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -88,6 +90,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, QMetaType::LongLong,    6,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    9,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -110,6 +113,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 6: _t->on_pushButton_previous_clicked(); break;
         case 7: _t->on_pushButton_next_clicked(); break;
         case 8: _t->on_video_back_clicked(); break;
+        case 9: _t->toggle_volumeControl(); break;
         default: ;
         }
     }
@@ -144,13 +148,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 10;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 10)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 10;
     }
     return _id;
 }

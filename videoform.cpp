@@ -12,3 +12,12 @@ videoForm::~videoForm()
 {
     delete ui;
 }
+
+void videoForm::mousePressEvent(QMouseEvent *e)
+{
+  if(e->button() == Qt::LeftButton)
+  {
+    qDebug()<<"clicked";
+    emit clicked();
+  }
+}

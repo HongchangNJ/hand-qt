@@ -58,11 +58,12 @@ public:
     QSpacerItem *verticalSpacer_3;
     QWidget *widget_12;
     QGridLayout *gridLayout_2;
+    QListWidget *video_list;
     QLabel *label_video_title;
     QSpacerItem *verticalSpacer_2;
-    QListWidget *video_list;
-    QSpacerItem *horizontalSpacer_4;
     QSpacerItem *horizontalSpacer_3;
+    QSpacerItem *verticalSpacer_5;
+    QSpacerItem *horizontalSpacer_4;
     QSpacerItem *verticalSpacer_4;
     QWidget *widget_6;
     QVBoxLayout *verticalLayout_10;
@@ -77,7 +78,6 @@ public:
     QPushButton *pushButton_previous;
     QPushButton *pushButton_play;
     QPushButton *pushButton_next;
-    QSlider *volumeBar;
     QPushButton *pushButton_volume;
 
     void setupUi(QMainWindow *MainWindow)
@@ -212,11 +212,13 @@ public:
 "border-radius: 50px;\n"
 "\n"
 ""));
-        music_list->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        music_list->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        music_list->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         music_list->setAutoScrollMargin(150);
         music_list->setProperty("showDropIndicator", QVariant(true));
         music_list->setDragEnabled(false);
         music_list->setIconSize(QSize(0, 0));
+        music_list->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
         music_list->setBatchSize(10);
 
         gridLayout->addWidget(music_list, 3, 1, 1, 1);
@@ -256,12 +258,24 @@ public:
         widget_12->setObjectName(QString::fromUtf8("widget_12"));
         widget_12->setMinimumSize(QSize(0, 200));
         widget_12->setMaximumSize(QSize(16777215, 700));
-        widget_12->setStyleSheet(QString::fromUtf8("background:transparent;\n"
-"background-image: url(:/resource/Rectangle 34624646.png);\n"
+        widget_12->setStyleSheet(QString::fromUtf8("background-image: url(:/resource/Rectangle 34624646.png);\n"
 "border-radius: 10px;\n"
 "background-position:center"));
         gridLayout_2 = new QGridLayout(widget_12);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        video_list = new QListWidget(widget_12);
+        video_list->setObjectName(QString::fromUtf8("video_list"));
+        video_list->setMaximumSize(QSize(16777215, 400));
+        video_list->setFont(font2);
+        video_list->setStyleSheet(QString::fromUtf8(""));
+        video_list->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        video_list->setAutoScrollMargin(150);
+        video_list->setIconSize(QSize(480, 360));
+        video_list->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
+        video_list->setBatchSize(10);
+
+        gridLayout_2->addWidget(video_list, 3, 1, 1, 1);
+
         label_video_title = new QLabel(widget_12);
         label_video_title->setObjectName(QString::fromUtf8("label_video_title"));
         label_video_title->setFont(font3);
@@ -274,24 +288,17 @@ public:
 
         gridLayout_2->addItem(verticalSpacer_2, 0, 1, 1, 1);
 
-        video_list = new QListWidget(widget_12);
-        video_list->setObjectName(QString::fromUtf8("video_list"));
-        video_list->setFont(font2);
-        video_list->setStyleSheet(QString::fromUtf8(""));
-        video_list->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-        video_list->setAutoScrollMargin(150);
-        video_list->setIconSize(QSize(480, 360));
-        video_list->setBatchSize(10);
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
-        gridLayout_2->addWidget(video_list, 3, 1, 1, 1);
+        gridLayout_2->addItem(horizontalSpacer_3, 3, 0, 1, 1);
+
+        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        gridLayout_2->addItem(verticalSpacer_5, 4, 1, 1, 1);
 
         horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
         gridLayout_2->addItem(horizontalSpacer_4, 3, 2, 1, 1);
-
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-
-        gridLayout_2->addItem(horizontalSpacer_3, 3, 0, 1, 1);
 
         verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
@@ -387,9 +394,13 @@ public:
         pushButton_previous->setObjectName(QString::fromUtf8("pushButton_previous"));
         sizePolicy1.setHeightForWidth(pushButton_previous->sizePolicy().hasHeightForWidth());
         pushButton_previous->setSizePolicy(sizePolicy1);
-        pushButton_previous->setMaximumSize(QSize(86, 86));
-        pushButton_previous->setStyleSheet(QString::fromUtf8("background:transparent;\n"
-"background-image: url(:/resource/previous.png);"));
+        pushButton_previous->setMinimumSize(QSize(128, 128));
+        pushButton_previous->setMaximumSize(QSize(128, 128));
+        pushButton_previous->setStyleSheet(QString::fromUtf8(""));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/resource/previous.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_previous->setIcon(icon);
+        pushButton_previous->setIconSize(QSize(128, 128));
 
         horizontalLayout_4->addWidget(pushButton_previous);
 
@@ -399,11 +410,11 @@ public:
         pushButton_play->setSizePolicy(sizePolicy1);
         pushButton_play->setMaximumSize(QSize(128, 128));
         pushButton_play->setAutoFillBackground(false);
-        pushButton_play->setStyleSheet(QString::fromUtf8(""));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/resource/icon_play.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon.addFile(QString::fromUtf8(":/resource/icon_pause.png"), QSize(), QIcon::Normal, QIcon::On);
-        pushButton_play->setIcon(icon);
+        pushButton_play->setStyleSheet(QString::fromUtf8("background:transparent;border-style:none;"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/resource/icon_play.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8(":/resource/icon_pause.png"), QSize(), QIcon::Normal, QIcon::On);
+        pushButton_play->setIcon(icon1);
         pushButton_play->setIconSize(QSize(128, 128));
         pushButton_play->setCheckable(true);
         pushButton_play->setFlat(true);
@@ -414,26 +425,25 @@ public:
         pushButton_next->setObjectName(QString::fromUtf8("pushButton_next"));
         sizePolicy1.setHeightForWidth(pushButton_next->sizePolicy().hasHeightForWidth());
         pushButton_next->setSizePolicy(sizePolicy1);
-        pushButton_next->setMaximumSize(QSize(86, 86));
-        pushButton_next->setStyleSheet(QString::fromUtf8("background:transparent;\n"
-"background-image: url(:/resource/next.png);"));
+        pushButton_next->setMaximumSize(QSize(128, 128));
+        pushButton_next->setStyleSheet(QString::fromUtf8(""));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/resource/next.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_next->setIcon(icon2);
+        pushButton_next->setIconSize(QSize(128, 128));
 
         horizontalLayout_4->addWidget(pushButton_next);
-
-        volumeBar = new QSlider(audio_control_container);
-        volumeBar->setObjectName(QString::fromUtf8("volumeBar"));
-        volumeBar->setOrientation(Qt::Vertical);
-
-        horizontalLayout_4->addWidget(volumeBar);
 
         pushButton_volume = new QPushButton(audio_control_container);
         pushButton_volume->setObjectName(QString::fromUtf8("pushButton_volume"));
         sizePolicy1.setHeightForWidth(pushButton_volume->sizePolicy().hasHeightForWidth());
         pushButton_volume->setSizePolicy(sizePolicy1);
-        pushButton_volume->setMaximumSize(QSize(75, 75));
-        pushButton_volume->setStyleSheet(QString::fromUtf8("background:transparent;\n"
-"background-image: url(:/resource/volume.png);"));
-        pushButton_volume->setIconSize(QSize(16, 16));
+        pushButton_volume->setMaximumSize(QSize(128, 128));
+        pushButton_volume->setStyleSheet(QString::fromUtf8(""));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/resource/volume.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_volume->setIcon(icon3);
+        pushButton_volume->setIconSize(QSize(128, 128));
 
         horizontalLayout_4->addWidget(pushButton_volume);
 

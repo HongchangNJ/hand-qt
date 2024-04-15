@@ -12,6 +12,7 @@
 #include "ui_musicform.h"
 #include "videoform.h"
 #include "ui_videoform.h"
+#include <QPoint>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -20,7 +21,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->progressBar->installEventFilter(this);
-    ui->volumeBar->setVisible(false);
     setAcceptDrops(true);
     this->setWindowState(this->windowState() | Qt::WindowMaximized);
 
@@ -29,7 +29,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->progressBar->setStyleSheet("QSlider {"
                                        "min-height: 40px;"  // 设置滑动条的最小高度
                                        "max-height: 40px;"  // 设置滑动条的最大高度
-                                       "background-color:transparent;"
+                                       "background:transparent;"
+                                       "border:none;"
+                                       "border-style:none"
                                    "}"
                                    "QSlider::groove:horizontal {"
                                         "border-radius: 5px;"  // 槽的圆角
@@ -52,20 +54,31 @@ MainWindow::MainWindow(QWidget *parent)
                                    "}"
                                    );
 
-    // 播放按钮样式设置 background:transparent;\nbackground-image: url(:/resource/icon_play.png);
-    ui->pushButton_play->setAttribute(Qt::WidgetAttribute::WA_TranslucentBackground);
-    ui->pushButton_play->setFlat(true);
-    // ui->pushButton_play->setStyleSheet("border:none;");
-//    QPalette palette = ui->pushButton_play->palette();
-//    palette.setColor(QPalette::Button, Qt::transparent);
-//    ui->pushButton_play->setPalette(palette);
-//    ui->pushButton_play->setAutoFillBackground(true);
 
+    //设置按钮Pressed背景
+    QString buttonStyle = "QPushButton {"
+                          "background: transparent;"
+                          "border:none;"
+                          "border-style:none;"
+                     "}"
+                     "QPushButton:pressed {"
+                          "background: rgba(255,255,255, 0.3);"         // 按下时的背景颜色
+                          "border-radius: 64px;"            // 确保圆形形状
+                          "border-style:none;"
+                     "}";
+    ui->pushButton_previous->setStyleSheet(buttonStyle);
+    ui->pushButton_next->setStyleSheet(buttonStyle);
+    ui->pushButton_volume->setStyleSheet(buttonStyle);
+
+    // ui->music_list->ScrollMode
     ui->music_list->setFlow(QListView::TopToBottom);
+    ui->music_list->setFocusPolicy(Qt::NoFocus);
+
     ui->music_list->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); //屏蔽水平滑动条
     ui->music_list->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff); //屏蔽垂直滑动条
     ui->music_list->setHorizontalScrollMode(QListWidget::ScrollPerPixel); //设置为像素滚动
-    ui->music_list->setStyleSheet("QListWidget::item:selected { background-color: rgba(255, 255, 255，90%); }");
+    ui->music_list->setStyleSheet("QListWidget::item:selected { background-color:rgba(255,255,255,20%);}"
+                                  "QListWidget::item:hover { background-color:rgba(255,255,255,5%);}");
     QScroller::grabGesture(ui->music_list, QScroller::LeftMouseButtonGesture);
 
     QDir music_dir(QDir::currentPath() + ("/resource/music/"));
@@ -96,13 +109,14 @@ MainWindow::MainWindow(QWidget *parent)
         imageItem->setSizeHint(QSize(400, 140));
         ui->music_list->addItem(imageItem);
         ui->music_list->setItemWidget(imageItem, music_form);
+        // imageItem->setCheckState(false);
 
         QString music_title = music_form->ui->label_music_title->text();
-        connect(music_form->ui->pushButton, &QPushButton::clicked, this, [=]()
+        connect(music_form, &musicForm::clicked, this, [=]()
         {
-            positionChange(0);
-            QPixmap pixmap("./resource/music_cover/" + music_title + ".png");
+            imageItem->setSelected(true);
             ui->label_music_cover->setVisible(true);
+            QPixmap pixmap("./resource/music_cover/" + music_title + ".png");
             ui->label_music_cover->setPixmap(pixmap);
             ui->label_name->setText(music_title);
             m_player->setMedia(QUrl::fromLocalFile(QDir::currentPath() + "/resource/music/" + music_title + ".mp3"));
@@ -110,24 +124,17 @@ MainWindow::MainWindow(QWidget *parent)
             playFile();
             m_type = "music";
         });
-        connect(music_form, &musicForm::clicked, this, [=]()
-        {
-            //positionChange(0);
-            ui->label_music_cover->setVisible(true);
-            QPixmap pixmap("./resource/music_cover/" + music_title + ".png");
-            ui->label_music_cover->setPixmap(pixmap);
-            ui->label_name->setText(music_title);
-            //m_player->setMedia(QUrl::fromLocalFile(QDir::currentPath() + "/resource/music/" + music_title + ".mp3"));
-            //m_playerState = QMediaPlayer::PausedState;
-            //playFile();
-            //m_type = "music";
-        });
     }
 
     ui->video_list->setFlow(QListView::LeftToRight);
+    ui->video_list->setFocusPolicy(Qt::NoFocus);
     ui->video_list->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); //屏蔽水平滑动条
     ui->video_list->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff); //屏蔽垂直滑动条
     ui->video_list->setHorizontalScrollMode(QListWidget::ScrollPerPixel); //设置为像素滚动
+    ui->video_list->setStyleSheet("QListWidget {background:transparent}"
+                                  "QListWidget::item { margin: 10px; padding: 10px; }"
+                                  "QListWidget::item:selected { background-color:rgba(255,255,255,20%); border-radius: 5;}"
+                                  "QListWidget::item:hover { background-color:rgba(255,255,255,5%);border-radius: 5;}");
     QScroller::grabGesture(ui->video_list, QScroller::LeftMouseButtonGesture);
 
     QDir video_dir("./resource/video/");
@@ -145,22 +152,7 @@ MainWindow::MainWindow(QWidget *parent)
     {
         QFileInfo fileInfo = m_videoCoverList.at(i);
         QPixmap pixmap(fileInfo.filePath());
-
-//        QPainter painter(&pixmap);
-//        QPen pen = painter.pen();
-//        pen.setColor(Qt::white);
-//        QFont font = painter.font();
-//        font.setBold(true);
-//        font.setPixelSize(30);
-//        painter.setPen(pen);
-//        painter.setFont(font);
-//        painter.drawText(pixmap.rect(),Qt::AlignCenter,fileInfo.baseName());
-
         QListWidgetItem *imageItem = new QListWidgetItem;
-//        imageItem->setIcon(QIcon(pixmap));
-//        imageItem->setText(fileInfo.baseName());
-//        imageItem->setSizeHint(QSize(480, 360));
-//        ui->video_list->addItem(imageItem);
 
         videoForm *video_form = new videoForm;
         video_form->ui->label_video_cover->setPixmap(pixmap);
@@ -170,9 +162,10 @@ MainWindow::MainWindow(QWidget *parent)
         ui->video_list->setItemWidget(imageItem, video_form);
 
         QString video_title = video_form->ui->label_video_title->text();
-        connect(video_form->ui->pushButton, &QPushButton::clicked, this, [=]()
+        connect(video_form, &videoForm::clicked, this, [=]()
         {
             positionChange(0);
+            imageItem->setSelected(true);
             ui->stackedWidget->setCurrentIndex(0);
             ui->label_music_cover->setVisible(false);
             ui->label_name->setText(video_title);
@@ -188,15 +181,15 @@ MainWindow::MainWindow(QWidget *parent)
     ui->label_music_cover->setPixmap(pixmap);
     ui->label_name->setText(music_cover_list.first().baseName());
 
-    volumeBar = new QSlider(Qt::Horizontal); ;
+    // volumeBar = new QSlider(Qt::Horizontal);
+    volumn_control = new VolumnControl(m_player, this);  // 传递播放器引用
+    connect(ui->pushButton_volume, &QPushButton::clicked, this, &MainWindow::toggle_volumeControl);
+
+    QVBoxLayout *layout = new QVBoxLayout(this);
+    layout->addWidget(volumn_control);
+    setLayout(layout);
 
     connect(m_player, SIGNAL(positionChanged(qint64)), this, SLOT(positionChange(qint64)));
-//    connect(m_player, &QMediaPlayer::mediaStatusChanged, this, [=] (QMediaPlayer::MediaStatus status) {
-//        if (status == QMediaPlayer::MediaStatus::EndOfMedia)
-//        {
-//            playFile();
-//        }
-//    });
     connect(m_player, &QMediaPlayer::stateChanged, this, [=] (QMediaPlayer::State newState) {
         if (newState == QMediaPlayer::State::PlayingState) {
             ui->pushButton_play->setChecked(true);
@@ -208,8 +201,6 @@ MainWindow::MainWindow(QWidget *parent)
 
         }
     });
-    //connect(ui->music_list, &QListWidget::itemClicked, this, &MainWindow::on_music_list_itemClicked);
-    //connect(ui->video_list, &QListWidget::itemClicked, this, &MainWindow::on_video_list_itemClicked);
 }
 
 MainWindow::~MainWindow()
@@ -217,6 +208,13 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+// 显示音量调节控件
+void MainWindow::toggle_volumeControl() {
+    QPoint globalPos  = ui->pushButton_volume->mapToGlobal(QPoint(0, 0));
+    volumn_control->move(globalPos.x() +  ui->pushButton_volume->width() / 2 - 15,
+                         globalPos.y() - ui->pushButton_volume->height() / 2 - 470);
+    volumn_control->show();
+}
 
 void MainWindow::paintEvent(QPaintEvent *)
 {
@@ -305,7 +303,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event)
 
 void MainWindow::on_pushButton_volume_clicked()
 {
-    ui->volumeBar->setVisible(false);
+    //ui->volumeBar->setVisible(false);
 }
 
 void MainWindow::on_volumeBar_valueChanged(int value)
@@ -318,29 +316,9 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton)
     {
-        ui->volumeBar->setVisible(false);
+        //ui->volumeBar->setVisible(false);
     }
 }
-
-
-//void MainWindow::on_pushButton_play_video_clicked()
-//{
-//    positionChange(0);
-//    ui->label_music_author->setVisible(false);
-//    ui->label_music_cover->setVisible(false);
-//    ui->label_music_name->setVisible(false);
-
-//    if(ui->stackedWidget->currentIndex() == 0)
-//    {
-//        ui->stackedWidget->setCurrentIndex(1);
-//        //ui->label_video_name2->setText(m_videoList.at(1).baseName());
-
-//        m_player->setMedia(QUrl::fromLocalFile(m_videoList.at(1).absoluteFilePath()));
-//        playFile();
-//    }
-
-//    m_type = "video";
-//}
 
 void MainWindow::on_pushButton_previous_clicked()
 {

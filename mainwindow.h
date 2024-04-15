@@ -8,6 +8,7 @@
 #include <QLabel>
 #include <QFileDialog>
 #include <QListWidgetItem>
+#include "VolumnControl.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -47,6 +48,7 @@ private slots:
     //void on_video_list_itemClicked(QListWidgetItem *item);
 
     void on_video_back_clicked();
+    void toggle_volumeControl();
 
 protected:
     void dragEnterEvent(QDragEnterEvent *);
@@ -58,7 +60,7 @@ protected:
 private:
     Ui::MainWindow *ui;
 
-    QSlider *volumeBar;
+    // QSlider *volumeBar;
 
     QMediaPlayer *m_player;
 
@@ -73,6 +75,7 @@ private:
     QFileInfoList m_musicList, m_videoList, m_videoCoverList;
 
     QString m_type = "music";
+    VolumnControl *volumn_control;
 };
 
 #endif // MAINWINDOW_H
